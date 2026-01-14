@@ -1,9 +1,13 @@
+import MainLayout from './components/layout/MainLayout';
+import Header from './components/layout/Header';
+
 export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-sky-100">
-        <p className="text-[500px] !text-green-400 rotate-6">
-            Testeee
-        </p>
-    </div>
-  )
+    <MainLayout>
+      <Header />
+      <section id="hero">Hero</section>
+      <section id="projects">Projects</section>
+      <section id="about">About</section>
+    </MainLayout>
+  );
 }
