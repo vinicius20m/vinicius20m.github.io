@@ -25,9 +25,9 @@ export function useTheme() {
   useEffect(() => {
     // Apply theme to html element
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.removeAttribute('data-theme');
     }
     // Persist to localStorage
     localStorage.setItem('theme', theme);

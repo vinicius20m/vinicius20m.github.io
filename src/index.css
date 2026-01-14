@@ -3,9 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 :root {
   color-scheme: light;
 }
-.dark {
+[data-theme=dark] {
   color-scheme: dark;
 }
