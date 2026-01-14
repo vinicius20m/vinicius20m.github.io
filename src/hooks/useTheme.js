@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 
 export function useTheme() {
-  const [theme, setTheme] = useState('light');
+//   const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') ?? 'light';
+  });
 
   useEffect(() => {
     // Read from localStorage or system preference
