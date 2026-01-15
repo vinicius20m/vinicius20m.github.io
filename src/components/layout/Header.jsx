@@ -1,7 +1,9 @@
 import { useTheme } from '../../hooks/useTheme';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
+  const { language, toggleLanguage, translations } = useLanguage();
 
   return (
     <header className="py-4">
@@ -15,16 +17,16 @@ export default function Header() {
           <nav className="hidden md:block">
             <ul className="flex space-x-4">
               <li>
-                <a href="#hero" className="hover:underline text-gray-900 dark:text-gray-100">Hero</a>
+                <a href="#hero" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.hero}</a>
               </li>
               <li>
-                <a href="#projects" className="hover:underline text-gray-900 dark:text-gray-100">Projects</a>
+                <a href="#projects" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.projects}</a>
               </li>
               <li>
-                <a href="#about" className="hover:underline text-gray-900 dark:text-gray-100">About</a>
+                <a href="#about" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.about}</a>
               </li>
               <li>
-                <a href="#contact" className="hover:underline text-gray-900 dark:text-gray-100">Contact</a>
+                <a href="#contact" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.contact}</a>
               </li>
             </ul>
           </nav>
@@ -32,13 +34,18 @@ export default function Header() {
           {/* Dark mode toggle button */}
           <button
             onClick={toggleTheme}
-            className="text-sm bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-2 py-1 rounded"
+            className="hover:cursor-pointer text-sm bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-2 py-1 rounded"
           >
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
 
-          {/* Placeholder for language toggle */}
-          <div className="text-sm text-gray-900 dark:text-gray-100">LANG</div>
+          {/* Language toggle button */}
+          <button
+            onClick={toggleLanguage}
+            className="hover:cursor-pointer text-sm bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-2 py-1 rounded"
+          >
+            {language.toUpperCase()}
+          </button>
 
           {/* Mobile menu placeholder button */}
           <button className="md:hidden text-xl text-gray-900 dark:text-gray-100">☰</button>
