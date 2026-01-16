@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import en from '../i18n/en';
 import pt from '../i18n/pt';

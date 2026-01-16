@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 export function useTheme() {
-//   const [theme, setTheme] = useState('light');
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') ?? 'light';
   });
@@ -9,15 +8,11 @@ export function useTheme() {
   useEffect(() => {
     // Read from localStorage or system preference
     const savedTheme = localStorage.getItem('theme');
-    console.log('passando no effect');
     if (savedTheme) {
-        console.log('tema salvo -->> ', savedTheme);
         setTheme(savedTheme);
     } else {
-        console.log('tema nao salvo');
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-      console.log('system prefer: --> ', systemPrefersDark);
       setTheme(systemPrefersDark ? 'dark' : 'light');
     }
   }, []);
@@ -31,7 +26,6 @@ export function useTheme() {
     }
     // Persist to localStorage
     localStorage.setItem('theme', theme);
-    console.log('guardando -->> ', theme);
   }, [theme]);
 
   const toggleTheme = () => {

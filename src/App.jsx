@@ -1,6 +1,7 @@
 import MainLayout from './components/layout/MainLayout';
 import Header from './components/layout/Header';
 import { useLanguage } from './contexts/LanguageContext';
+import React from 'react';
 
 export default function App() {
   const { translations } = useLanguage();
