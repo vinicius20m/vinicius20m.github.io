@@ -8,8 +8,12 @@ const en = {
     }
   },
   hero: {
-    title: "Welcome to My Portfolio",
-    subtitle: "This is the hero section with some introductory content."
+    name: "Vinicius Mendes",
+    role: "Full-Stack Developer",
+    description: "Passionate about creating innovative web solutions with modern technologies.",
+    techStack: ["PHP", "Laravel", "Livewire", "JavaScript", "React", "Tailwind"],
+    button1: "View Projects",
+    button2: "Contact Me"
   },
   projects: {
     title: "Projects",
