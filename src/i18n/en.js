@@ -1,3 +1,7 @@
+import trelloThumb from '../assets/images/videoframe_92846.png';
+import receiptsThumb from '../assets/images/videoframe_30349.png';
+import toDoThumb from '../assets/images/videoframe_250136.png'
+
 const en = {
   header: {
     nav: {
@@ -17,7 +21,33 @@ const en = {
   },
   projects: {
     title: "Projects",
-    description: "Here are some of my projects. This section has content to fill the screen."
+    description: "Here are some of my projects. This section has content to fill the screen.",
+    hero: {
+      title: "Clone Trello",
+      description: "A full-featured Trello clone built with modern web technologies, featuring drag-and-drop functionality, real-time collaboration, and responsive design.",
+      techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
+      github: "https://github.com/vinicius20m/clone-trello",
+      thumbnail: trelloThumb,
+      youtube: "https://www.youtube.com/embed/ligqidJ1esg"
+    },
+    secondary: [
+      {
+        title: "E-commerce Platform",
+        description: "A scalable e-commerce platform with user authentication, payment integration, and admin dashboard.",
+        techStack: ["React", "Express", "PostgreSQL", "Stripe"],
+        github: "https://github.com/vinicius20m/ecommerce-platform",
+        thumbnail: receiptsThumb,
+        youtube: "https://www.youtube.com/embed/MGvogzSHiF8"
+      },
+      {
+        title: "Weather App",
+        description: "A weather application providing real-time forecasts, location-based data, and interactive maps.",
+        techStack: ["React", "OpenWeather API", "Leaflet"],
+        github: "https://github.com/vinicius20m/weather-app",
+        thumbnail: toDoThumb,
+        youtube: "https://www.youtube.com/embed/tULBFdK0fAU"
+      }
+    ]
   },
   about: {
     title: "About Me",
