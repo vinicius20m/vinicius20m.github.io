@@ -1,11 +1,13 @@
 import MainLayout from './components/layout/MainLayout';
 import Header from './components/layout/Header';
 import Hero from './sections/Hero';
+import Modal from './components/Modal';
 import { useLanguage } from './contexts/LanguageContext';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function App() {
   const { translations } = useLanguage();
+
   return (
     <MainLayout>
       <Header />
