@@ -1,3 +1,7 @@
+import trelloThumb from '../assets/images/videoframe_92846.png';
+import receiptsThumb from '../assets/images/videoframe_30349.png';
+import toDoThumb from '../assets/images/videoframe_250136.png'
+
 const pt = {
   header: {
     nav: {
@@ -23,24 +27,24 @@ const pt = {
       description: "Um clone completo do Trello construído com tecnologias web modernas, apresentando funcionalidade de arrastar e soltar, colaboração em tempo real e design responsivo.",
       techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
       github: "https://github.com/vinicius20m/clone-trello",
-      thumbnail: "https://via.placeholder.com/600x400?text=Clone+Trello",
+      thumbnail: trelloThumb,
       youtube: "https://www.youtube.com/embed/ligqidJ1esg"
     },
     secondary: [
       {
-        title: "Plataforma de E-commerce",
+        title: "Receitas",
         description: "Uma plataforma de e-commerce escalável com autenticação de usuário, integração de pagamentos e painel de administração.",
         techStack: ["React", "Express", "PostgreSQL", "Stripe"],
         github: "https://github.com/vinicius20m/ecommerce-platform",
-        thumbnail: "https://via.placeholder.com/400x300?text=E-commerce",
+        thumbnail: receiptsThumb,
         youtube: "https://www.youtube.com/embed/MGvogzSHiF8"
       },
       {
-        title: "Aplicativo de Clima",
+        title: "ToDo",
         description: "Um aplicativo de clima que fornece previsões em tempo real, dados baseados em localização e mapas interativos.",
         techStack: ["React", "OpenWeather API", "Leaflet"],
         github: "https://github.com/vinicius20m/weather-app",
-        thumbnail: "https://via.placeholder.com/400x300?text=Aplicativo+de+Clima",
+        thumbnail: toDoThumb,
         youtube: "https://www.youtube.com/embed/tULBFdK0fAU"
       }
     ]
