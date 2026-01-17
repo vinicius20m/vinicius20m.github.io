@@ -22,21 +22,21 @@ const ProjectCard = ({ project, variant }) => {
 
   return (
     <>
-      <div className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden ${isHero ? 'md:col-span-2' : ''}`}>
+      <div className={`mb-3 border border-gray-600/50 dark:border-sky-900/50 bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-gray-700 overflow-hidden ${isHero ? 'md:col-span-2 mb-10' : 'mx-5'}`}>
         <div className="relative">
           {!imageError ? (
             <img
               src={project.thumbnail}
               alt={project.title}
-              className={`w-full object-cover ${isHero ? 'h-64 md:h-80' : 'h-48'}`}
+              className={`w-full object-cover ${isHero ? 'h-68 md:h-90' : 'h-45'}`}
               onError={handleImageError}
             />
           ) : (
-            <div className={`w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center ${isHero ? 'h-64 md:h-80' : 'h-48'}`}>
+            <div className={`w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center ${isHero ? 'h-68 md:h-90' : 'h-45'}`}>
               <span className="text-gray-500 dark:text-gray-400">Image not available</span>
             </div>
           )}
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer" onClick={openModal}>
+          <div className="absolute inset-0 bg-slate-950 bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-70 transition-opacity cursor-pointer" onClick={openModal}>
             <svg className="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
             </svg>
