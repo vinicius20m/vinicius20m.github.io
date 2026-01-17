@@ -18,7 +18,7 @@ const ProjectsSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-              <ProjectCard project={projects.hero} variant="hero" />
+          <ProjectCard project={projects.hero} variant="hero" />
             
           {projects.secondary.map((project, index) => (
             <ProjectCard key={index} project={project} variant="default" />
