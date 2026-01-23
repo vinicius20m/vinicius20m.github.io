@@ -23,7 +23,7 @@ const ProjectCard = ({ project, variant }) => {
   return (
     <>
       <div className={`mb-3 border border-gray-600/50 dark:border-sky-900/50 bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-gray-700 overflow-hidden ${isHero ? 'md:col-span-2 mb-10' : 'mx-2'}`}>
-        <div className="relative">
+        <div className="relative border-b-1 border-gray-600/50 drak:border-sky-900/50">
           {!imageError ? (
             <img
               src={project.thumbnail}
