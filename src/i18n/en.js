@@ -26,24 +26,24 @@ const en = {
       title: "Clone Trello",
       description: "A full-featured Trello clone built with modern web technologies, featuring drag-and-drop functionality, real-time collaboration, and responsive design.",
       techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-      github: "https://github.com/vinicius20m/clone-trello",
+      github: "https://github.com/vinicius20m/CloneTrello",
       thumbnail: trelloThumb,
       youtube: "https://www.youtube.com/embed/ligqidJ1esg"
     },
     secondary: [
       {
-        title: "E-commerce Platform",
+        title: "Top Receitas",
         description: "A scalable e-commerce platform with user authentication, payment integration, and admin dashboard.",
         techStack: ["React", "Express", "PostgreSQL", "Stripe"],
-        github: "https://github.com/vinicius20m/ecommerce-platform",
+        github: "https://github.com/vinicius20m/tReceitas",
         thumbnail: receiptsThumb,
         youtube: "https://www.youtube.com/embed/MGvogzSHiF8"
       },
       {
-        title: "Weather App",
+        title: "To-Do",
         description: "A weather application providing real-time forecasts, location-based data, and interactive maps.",
         techStack: ["React", "OpenWeather API", "Leaflet"],
-        github: "https://github.com/vinicius20m/weather-app",
+        github: "https://github.com/vinicius20m/ApiToDo-Beta",
         thumbnail: toDoThumb,
         youtube: "https://www.youtube.com/embed/tULBFdK0fAU"
       }
