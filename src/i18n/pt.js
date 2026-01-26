@@ -21,29 +21,29 @@ const pt = {
   },
   projects: {
     title: "Projetos",
-    description: "Aqui estão alguns dos meus projetos. Esta seção tem conteúdo para preencher a tela.",
+    description: "Aqui estão alguns dos meus projetos apresentados em video e com link para o repositório Github.",
     hero: {
       title: "Clone Trello",
       description: "Um clone completo do Trello construído com tecnologias web modernas, apresentando funcionalidade de arrastar e soltar, colaboração em tempo real e design responsivo.",
-      techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
-      github: "https://github.com/vinicius20m/clone-trello",
+      techStack: ["Laravel", "Axios", "Vue.Js", "Inertia", "Vuetify", "LoginSocial"],
+      github: "https://github.com/vinicius20m/CloneTrello",
       thumbnail: trelloThumb,
       youtube: "https://www.youtube.com/embed/ligqidJ1esg"
     },
     secondary: [
       {
-        title: "Receitas",
-        description: "Uma plataforma de e-commerce escalável com autenticação de usuário, integração de pagamentos e painel de administração.",
-        techStack: ["React", "Express", "PostgreSQL", "Stripe"],
-        github: "https://github.com/vinicius20m/ecommerce-platform",
+        title: "Top Receitas",
+        description: "Uma plataforma de receitas, com suporte para comentários, seguidores, receitas favoritas, like/dislike e receitas privadas.",
+        techStack: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+        github: "https://github.com/vinicius20m/tReceitas",
         thumbnail: receiptsThumb,
         youtube: "https://www.youtube.com/embed/MGvogzSHiF8"
       },
       {
-        title: "ToDo",
-        description: "Um aplicativo de clima que fornece previsões em tempo real, dados baseados em localização e mapas interativos.",
-        techStack: ["React", "OpenWeather API", "Leaflet"],
-        github: "https://github.com/vinicius20m/weather-app",
+        title: "To-Do",
+        description: "Aplicação de Lista de Afazeres, podendo vincular direntes tarefas com ambientes de trabalho, usando React e ASP-NET.",
+        techStack: ["ASP-NET", "C#", "React", "MS-SQL-Server", "Bootstrap"],
+        github: "https://github.com/vinicius20m/ApiToDo-Beta",
         thumbnail: toDoThumb,
         youtube: "https://www.youtube.com/embed/tULBFdK0fAU"
       }
