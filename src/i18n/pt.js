@@ -21,7 +21,7 @@ const pt = {
   },
   projects: {
     title: "Projetos",
-    description: "Aqui estão alguns dos meus projetos. Esta seção tem conteúdo para preencher a tela.",
+    description: "Aqui estão alguns dos meus projetos apresentados em video e com link para o repositório Github.",
     hero: {
       title: "Clone Trello",
       description: "Um clone completo do Trello construído com tecnologias web modernas, apresentando funcionalidade de arrastar e soltar, colaboração em tempo real e design responsivo.",

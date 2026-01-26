@@ -21,28 +21,28 @@ const en = {
   },
   projects: {
     title: "Projects",
-    description: "Here are some of my projects. This section has content to fill the screen.",
+    description: "Here are some of my projects presented in video and with a link to the Github repository.",
     hero: {
       title: "Clone Trello",
-      description: "A full-featured Trello clone built with modern web technologies, featuring drag-and-drop functionality, real-time collaboration, and responsive design.",
-      techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
+      description: "A complete Trello clone built with modern web technologies, featuring drag-and-drop functionality, real-time collaboration, and responsive design.",
+      techStack: ["Laravel", "Axios", "Vue.Js", "Inertia", "Vuetify", "LoginSocial"],
       github: "https://github.com/vinicius20m/CloneTrello",
       thumbnail: trelloThumb,
       youtube: "https://www.youtube.com/embed/ligqidJ1esg"
     },
     secondary: [
       {
-        title: "Top Receitas",
-        description: "A scalable e-commerce platform with user authentication, payment integration, and admin dashboard.",
-        techStack: ["React", "Express", "PostgreSQL", "Stripe"],
+        title: "Top Recipes",
+        description: "A recipe platform, with support for comments, followers, favorite recipes, like/dislike, and private recipes.",
+        techStack: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         github: "https://github.com/vinicius20m/tReceitas",
         thumbnail: receiptsThumb,
         youtube: "https://www.youtube.com/embed/MGvogzSHiF8"
       },
       {
         title: "To-Do",
-        description: "A weather application providing real-time forecasts, location-based data, and interactive maps.",
-        techStack: ["React", "OpenWeather API", "Leaflet"],
+        description: "To-Do List Application, able to link different tasks with work environments, using React and ASP-NET.",
+        techStack: ["ASP-NET", "C#", "React", "MS-SQL-Server", "Bootstrap"],
         github: "https://github.com/vinicius20m/ApiToDo-Beta",
         thumbnail: toDoThumb,
         youtube: "https://www.youtube.com/embed/tULBFdK0fAU"
