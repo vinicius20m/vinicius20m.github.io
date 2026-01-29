@@ -1,6 +1,35 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import skillsData from '../data/skills';
+
+const SkillCard = ({ skill }) => {
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  return (
+    <div className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
+      {!imageError ? (
+        <img
+          src={skill.logo}
+          alt={skill.name}
+          className="w-12 h-12 mx-auto mb-2"
+          onError={handleImageError}
+        />
+      ) : (
+        <img
+          src={"/placeholder-logo.jpg"}
+          className="w-12 h-12 mx-auto mb-2"
+          onError={handleImageError}
+        />
+      )}
+      <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
+    </div>
+  );
+};
 
 const SkillsSection = () => {
   const { translations } = useLanguage();
@@ -25,10 +54,7 @@ const SkillsSection = () => {
           </h3>
           <div className="flex overflow-x-auto space-x-4 pb-4">
             {skillsData.languages.map((skill, index) => (
-              <div key={index} className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
-                <img src={skill.logo} alt={skill.name} className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
-              </div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </div>
@@ -40,10 +66,7 @@ const SkillsSection = () => {
           </h3>
           <div className="flex overflow-x-auto space-x-4 pb-4">
             {skillsData.frameworksPlatforms.map((skill, index) => (
-              <div key={index} className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
-                <img src={skill.logo} alt={skill.name} className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
-              </div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </div>
@@ -55,10 +78,7 @@ const SkillsSection = () => {
           </h3>
           <div className="flex overflow-x-auto space-x-4 pb-4">
             {skillsData.librariesUI.map((skill, index) => (
-              <div key={index} className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
-                <img src={skill.logo} alt={skill.name} className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
-              </div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </div>
@@ -70,10 +90,7 @@ const SkillsSection = () => {
           </h3>
           <div className="flex overflow-x-auto space-x-4 pb-4">
             {skillsData.databases.map((skill, index) => (
-              <div key={index} className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
-                <img src={skill.logo} alt={skill.name} className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
-              </div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </div>
@@ -85,10 +102,7 @@ const SkillsSection = () => {
           </h3>
           <div className="flex overflow-x-auto space-x-4 pb-4">
             {skillsData.toolsQuality.map((skill, index) => (
-              <div key={index} className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
-                <img src={skill.logo} alt={skill.name} className="w-12 h-12 mx-auto mb-2" />
-                <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
-              </div>
+              <SkillCard key={index} skill={skill} />
             ))}
           </div>
         </div>
