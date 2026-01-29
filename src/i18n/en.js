@@ -56,6 +56,18 @@ const en = {
   contact: {
     title: "Contact",
     description: "Get in touch. This is a placeholder for the contact section."
+  },
+  skills: {
+    title: "Skills",
+    description: "Here are the skills and staks that i work with.",
+    categories: {
+      languages: "Languages",
+      frameworksPlatforms: "Frameworks & Platforms",
+      librariesUI: "Libraries & UI",
+      databases: "Data Bases",
+      toolsQuality: "Quality and Tools",
+      engineeringPractices: "Engeneering Practices"
+    }
   }
 };
 
