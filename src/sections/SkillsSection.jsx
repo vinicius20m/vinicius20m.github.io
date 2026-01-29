@@ -11,12 +11,12 @@ const SkillCard = ({ skill }) => {
   };
 
   return (
-    <div className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md">
+    <div className="flex-shrink-0 bg-white dark:bg-gray-700 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 min-w-[120px]">
       {!imageError ? (
         <img
           src={skill.logo}
           alt={skill.name}
-          className="w-12 h-12 mx-auto mb-2"
+          className="w-12 h-12 mx-auto mb-2 object-contain"
           onError={handleImageError}
         />
       ) : (
@@ -26,7 +26,9 @@ const SkillCard = ({ skill }) => {
           onError={handleImageError}
         />
       )}
-      <p className="text-center text-gray-900 dark:text-white">{skill.name}</p>
+      <p className="text-center text-gray-900 dark:text-white text-sm font-medium truncate">
+        {skill.name}
+      </p>
     </div>
   );
 };
@@ -52,10 +54,12 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.languages}
           </h3>
-          <div className="flex overflow-x-auto space-x-4 pb-4">
-            {skillsData.languages.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide scroll-smooth">
+              {skillsData.languages.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -64,10 +68,12 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.frameworksPlatforms}
           </h3>
-          <div className="flex overflow-x-auto space-x-4 pb-4">
-            {skillsData.frameworksPlatforms.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide scroll-smooth">
+              {skillsData.frameworksPlatforms.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -76,10 +82,12 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.librariesUI}
           </h3>
-          <div className="flex overflow-x-auto space-x-4 pb-4">
-            {skillsData.librariesUI.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide scroll-smooth">
+              {skillsData.librariesUI.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -88,10 +96,12 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.databases}
           </h3>
-          <div className="flex overflow-x-auto space-x-4 pb-4">
-            {skillsData.databases.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide scroll-smooth">
+              {skillsData.databases.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -100,10 +110,12 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.toolsQuality}
           </h3>
-          <div className="flex overflow-x-auto space-x-4 pb-4">
-            {skillsData.toolsQuality.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide scroll-smooth">
+              {skillsData.toolsQuality.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -112,11 +124,11 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.engineeringPractices}
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             {skillsData.engineeringPractices.map((practice, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 {practice}
               </span>
