@@ -8,7 +8,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="min-h-screen py-20 bg-gray-100 dark:bg-gray-900 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto md:px-7">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {projects.title}
@@ -17,7 +17,7 @@ const ProjectsSection = () => {
             {projects.description}
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7">
           <ProjectCard project={projects.hero} variant="hero" />
             
           {projects.secondary.map((project, index) => (
