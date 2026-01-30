@@ -1,44 +1,55 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useCallback, useEffect, useRef } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import Modal from './Modal';
+
+import React, { useState, useCallback, useEffect, useRef } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
+import Modal from './Modal'
 
 export default function CertificatesCarousel({ certificates }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [Autoplay({ delay: 1800 })]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCertificate, setSelectedCertificate] = useState(null);
-  
+  const autoplay = useRef(
+    Autoplay({ delay: 1800, stopOnInteraction: false })
+  )
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true },
+    [autoplay.current]
+  )
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedCertificate, setSelectedCertificate] = useState(null)
+
   const tweenFactor = useRef(0)
   const tweenNodes = useRef([])
 
   const TWEEN_FACTOR_BASE = 0.52
-  
+
   const numberWithinRange = (number, min, max) =>
     Math.min(Math.max(number, min), max)
 
   const goToPrev = () => {
-    if (emblaApi) emblaApi.goToPrev();
-  };
+    if (emblaApi) emblaApi.goToPrev()
+  }
 
   const goToNext = () => {
-    if (emblaApi) emblaApi.goToNext();
-  };
+    if (emblaApi) emblaApi.goToNext()
+  }
 
   const openModal = (certificate) => {
-    setSelectedCertificate(certificate);
-    setIsModalOpen(true);
-  };
+    autoplay.current.stop()
+    setSelectedCertificate(certificate)
+    setIsModalOpen(true)
+  }
 
   const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCertificate(null);
-  };
+    setIsModalOpen(false)
+    setSelectedCertificate(null)
+    autoplay.current.play()
+  }
 
   const setTweenNodes = useCallback((emblaApi) => {
-    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector('.certificate-card')
-    })
+    tweenNodes.current = emblaApi.slideNodes().map((slideNode) =>
+      slideNode.querySelector('.certificate-card')
+    )
   }, [])
 
   const setTweenFactor = useCallback((emblaApi) => {
@@ -64,21 +75,19 @@ export default function CertificatesCarousel({ certificates }) {
 
             if (slideIndex === loopItem.index && target !== 0) {
               const sign = Math.sign(target)
-
-              if (sign === -1) {
-                diffToTarget = scrollSnap - (1 + scrollProgress)
-              }
-              if (sign === 1) {
-                diffToTarget = scrollSnap + (1 - scrollProgress)
-              }
+              if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress)
+              if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress)
             }
           })
         }
 
         const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
-        const scale = numberWithinRange(tweenValue, 0, 1).toString()
-        const opacity = numberWithinRange(tweenValue, 0.5, 1).toString()
+        const scale = numberWithinRange(tweenValue, 0.85, 1)
+        const opacity = numberWithinRange(tweenValue, 0.6, 1)
+
         const tweenNode = tweenNodes.current[slideIndex]
+        if (!tweenNode) return
+
         tweenNode.style.transform = `scale(${scale})`
         tweenNode.style.opacity = opacity
       })
@@ -93,11 +102,11 @@ export default function CertificatesCarousel({ certificates }) {
     tweenScale(emblaApi)
 
     emblaApi
-      .on('reinit', setTweenNodes)
-      .on('reinit', setTweenFactor)
-      .on('reinit', tweenScale)
+      .on('reInit', setTweenNodes)
+      .on('reInit', setTweenFactor)
+      .on('reInit', tweenScale)
       .on('scroll', tweenScale)
-      .on('slidefocus', tweenScale)
+      .on('select', tweenScale)
   }, [emblaApi, tweenScale])
 
   return (
@@ -106,10 +115,15 @@ export default function CertificatesCarousel({ certificates }) {
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
             {certificates.map((cert, index) => (
-              <CertificateCard key={index} certificate={cert} onClick={() => openModal(cert)} />
+              <CertificateCard
+                key={index}
+                certificate={cert}
+                onClick={() => openModal(cert)}
+              />
             ))}
           </div>
         </div>
+
         <div className="flex justify-between mt-4">
           <button
             className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
@@ -117,6 +131,7 @@ export default function CertificatesCarousel({ certificates }) {
           >
             Previous
           </button>
+
           <button
             className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
             onClick={goToNext}
@@ -125,6 +140,7 @@ export default function CertificatesCarousel({ certificates }) {
           </button>
         </div>
       </div>
+
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
@@ -136,29 +152,21 @@ export default function CertificatesCarousel({ certificates }) {
               src={selectedCertificate.pdf}
               className="w-full h-100 md:h-130 border-0 rounded"
               title={selectedCertificate.title}
-              onError={() => {
-                // Fallback if PDF fails to load
-                return <p className="text-center text-gray-700 dark:text-gray-300">Unable to load certificate PDF</p>;
-              }}
             />
           </div>
         )}
       </Modal>
     </>
-  );
+  )
 }
 
 function CertificateCard({ certificate, onClick }) {
-  const [imageError, setImageError] = useState(false);
-
-  const handleImageError = () => {
-    setImageError(true);
-  };
+  const [imageError, setImageError] = useState(false)
 
   return (
     <div className="embla__slide flex-shrink-0 w-xl p-1 pt-8">
       <div
-        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden hover:scale-105 hover:-translate-y-5 transition-all duration-50"
+        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-50 hover:scale-105 hover:-translate-y-3"
         onClick={onClick}
       >
         {!imageError ? (
@@ -166,7 +174,7 @@ function CertificateCard({ certificate, onClick }) {
             src={certificate.image}
             alt={certificate.title}
             className="absolute inset-0 w-full h-full object-cover"
-            onError={handleImageError}
+            onError={() => setImageError(true)}
           />
         ) : (
           <img
@@ -175,7 +183,9 @@ function CertificateCard({ certificate, onClick }) {
             className="absolute inset-0 w-full h-full object-cover"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
         <div className="absolute bottom-20 right-11">
           <div className="bg-slate-200/30 backdrop-blur-md rounded-full border border-slate-200/50 p-2">
             <img
@@ -187,5 +197,5 @@ function CertificateCard({ certificate, onClick }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
