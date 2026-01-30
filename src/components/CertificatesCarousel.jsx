@@ -14,7 +14,7 @@ export default function CertificatesCarousel({ certificates }) {
   const tweenNodes = useRef([])
   const autoplayInterval = useRef(null)
 
-  const AUTOPLAY_DELAY = 1900
+  const AUTOPLAY_DELAY = 1750
   const TWEEN_FACTOR_BASE = 0.72
 
   const numberWithinRange = (number, min, max) =>
