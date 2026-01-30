@@ -101,12 +101,20 @@ export default function CertificatesCarousel({ certificates }) {
     setTweenFactor(emblaApi)
     tweenScale(emblaApi)
 
+    // ✅ START AUTOPLAY SAFELY
+    autoplay.current.play()
+
     emblaApi
       .on('reInit', setTweenNodes)
       .on('reInit', setTweenFactor)
       .on('reInit', tweenScale)
       .on('scroll', tweenScale)
       .on('select', tweenScale)
+
+    // ✅ Resume autoplay after drag
+    emblaApi.on('pointerUp', () => {
+      autoplay.current.play()
+    })
   }, [emblaApi, tweenScale])
 
   return (
