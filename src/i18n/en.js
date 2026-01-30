@@ -72,6 +72,48 @@ const en = {
   certificates: {
     title: "Certificates",
     description: "Here are some of my professional certificates and achievements."
+  },
+  experience: {
+    title: "Experience",
+    description: "My professional journey and key achievements.",
+    items: [
+      {
+        jobTitle: "Senior Full-Stack Developer",
+        company: "Tech Innovations Inc.",
+        dateRange: "Jan 2022 - Present",
+        description: "Leading the development of scalable web applications using modern technologies.",
+        achievements: [
+          "Developed and deployed 5+ full-stack applications serving 10k+ users",
+          "Implemented CI/CD pipelines reducing deployment time by 40%",
+          "Mentored junior developers and conducted code reviews"
+        ],
+        techStack: ["React", "Node.js", "PostgreSQL", "AWS"]
+      },
+      {
+        jobTitle: "Full-Stack Developer",
+        company: "Digital Solutions Ltd.",
+        dateRange: "Jun 2020 - Dec 2021",
+        description: "Built responsive web applications and APIs for various clients.",
+        achievements: [
+          "Created RESTful APIs handling 1M+ requests per month",
+          "Optimized database queries improving performance by 30%",
+          "Collaborated with design team to implement pixel-perfect UIs"
+        ],
+        techStack: ["Vue.js", "Laravel", "MySQL", "Docker"]
+      },
+      {
+        jobTitle: "Junior Developer",
+        company: "StartupXYZ",
+        dateRange: "Mar 2019 - May 2020",
+        description: "Contributed to the development of a SaaS platform from the ground up.",
+        achievements: [
+          "Built user authentication system with OAuth integration",
+          "Developed real-time chat feature using WebSockets",
+          "Participated in agile development processes"
+        ],
+        techStack: ["React", "Express.js", "MongoDB", "Socket.io"]
+      }
+    ]
   }
 };
 

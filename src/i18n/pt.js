@@ -72,6 +72,48 @@ const pt = {
   certificates: {
     title: "Certificados",
     description: "Aqui estão alguns dos meus certificados profissionais e conquistas."
+  },
+  experience: {
+    title: "Experiência",
+    description: "Minha jornada profissional e principais conquistas.",
+    items: [
+      {
+        jobTitle: "Desenvolvedor Full-Stack Sênior",
+        company: "Tech Innovations Inc.",
+        dateRange: "Jan 2022 - Presente",
+        description: "Liderando o desenvolvimento de aplicações web escaláveis usando tecnologias modernas.",
+        achievements: [
+          "Desenvolveu e implantou 5+ aplicações full-stack atendendo 10k+ usuários",
+          "Implementou pipelines CI/CD reduzindo o tempo de implantação em 40%",
+          "Mentorou desenvolvedores juniores e conduziu revisões de código"
+        ],
+        techStack: ["React", "Node.js", "PostgreSQL", "AWS"]
+      },
+      {
+        jobTitle: "Desenvolvedor Full-Stack",
+        company: "Digital Solutions Ltd.",
+        dateRange: "Jun 2020 - Dez 2021",
+        description: "Construiu aplicações web responsivas e APIs para diversos clientes.",
+        achievements: [
+          "Criou APIs RESTful lidando com 1M+ solicitações por mês",
+          "Otimizou consultas de banco de dados melhorando o desempenho em 30%",
+          "Colaborou com equipe de design para implementar UIs pixel-perfect"
+        ],
+        techStack: ["Vue.js", "Laravel", "MySQL", "Docker"]
+      },
+      {
+        jobTitle: "Desenvolvedor Júnior",
+        company: "StartupXYZ",
+        dateRange: "Mar 2019 - Mai 2020",
+        description: "Contribuiu para o desenvolvimento de uma plataforma SaaS desde o início.",
+        achievements: [
+          "Construiu sistema de autenticação de usuário com integração OAuth",
+          "Desenvolveu recurso de chat em tempo real usando WebSockets",
+          "Participou de processos de desenvolvimento ágil"
+        ],
+        techStack: ["React", "Express.js", "MongoDB", "Socket.io"]
+      }
+    ]
   }
 };
 
