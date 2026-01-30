@@ -78,40 +78,46 @@ const pt = {
     description: "Minha jornada profissional e principais conquistas.",
     items: [
       {
-        jobTitle: "Desenvolvedor Full-Stack Sênior",
-        company: "Tech Innovations Inc.",
-        dateRange: "Jan 2022 - Presente",
-        description: "Liderando o desenvolvimento de aplicações web escaláveis usando tecnologias modernas.",
+        jobTitle: "FullStack Web & Mobile Developer",
+        company: "GIGATRON FRANCHISING LTDA",
+        dateRange: "Jun 2024 — May 2025",
+        description: "Desenvolvimento e manutenção de sistemas ERP web e mobile, com foco em integrações, performance e estabilidade de aplicações em produção.",
         achievements: [
-          "Desenvolveu e implantou 5+ aplicações full-stack atendendo 10k+ usuários",
-          "Implementou pipelines CI/CD reduzindo o tempo de implantação em 40%",
-          "Mentorou desenvolvedores juniores e conduziu revisões de código"
+          "Integração de ERP com marketplaces como Shopee, Mercado Livre, Amazon, Magalu e NuvemShop",
+          "Desenvolvimento e manutenção de sistemas escaláveis usando PHP e PostgreSQL",
+          "Evolução contínua de aplicação mobile PDV em React Native",
+          "Implementação de módulos nativos em Java para integração com maquininhas Stone e PagBank",
+          "Suporte a integrações externas e automação de fluxos operacionais"
         ],
-        techStack: ["React", "Node.js", "PostgreSQL", "AWS"]
+        techStack: ["PHP", "Laravel", "PostgreSQL", "JavaScript", "React Native", "Java", "Git"]
       },
       {
-        jobTitle: "Desenvolvedor Full-Stack",
-        company: "Digital Solutions Ltd.",
-        dateRange: "Jun 2020 - Dez 2021",
-        description: "Construiu aplicações web responsivas e APIs para diversos clientes.",
+        jobTitle: "React Native Developer",
+        company: "GIGATRON FRANCHISING LTDA",
+        dateRange: "Aug 2022 — May 2024",
+        description: "Atuação no desenvolvimento de um aplicativo mobile PDV, com foco em performance, integração com hardware e experiência do usuário.",
         achievements: [
-          "Criou APIs RESTful lidando com 1M+ solicitações por mês",
-          "Otimizou consultas de banco de dados melhorando o desempenho em 30%",
-          "Colaborou com equipe de design para implementar UIs pixel-perfect"
+          "Desenvolvimento do zero de um aplicativo PDV usando React Native",
+          "Implementação de arquitetura offline-first com persistência local de dados",
+          "Integração com maquininhas SMART da Stone e PagBank",
+          "Impressão via Bluetooth usando protocolo ESCPOS",
+          "Criação de sistema White Label com design personalizável"
         ],
-        techStack: ["Vue.js", "Laravel", "MySQL", "Docker"]
+        techStack: ["React Native", "JavaScript", "TypeScript", "Java", "SQLite", "Git"]
       },
       {
-        jobTitle: "Desenvolvedor Júnior",
-        company: "StartupXYZ",
-        dateRange: "Mar 2019 - Mai 2020",
-        description: "Contribuiu para o desenvolvimento de uma plataforma SaaS desde o início.",
+        jobTitle: "PHP FullStack Junior Developer",
+        company: "AUDITOR PÚBLICO ASSESSORIA E TECNOLOGIA LTDA",
+        dateRange: "Feb 2021 — Aug 2021",
+        description: "Suporte e manutenção de sistemas web para gestão pública, atuando em módulos fiscais, de saúde e automação de processos administrativos.",
         achievements: [
-          "Construiu sistema de autenticação de usuário com integração OAuth",
-          "Desenvolveu recurso de chat em tempo real usando WebSockets",
-          "Participou de processos de desenvolvimento ágil"
+          "Manutenção de sistemas públicos nas áreas de saúde e fiscal",
+          "Geração de relatórios PDF e automação de envios de e-mails",
+          "Controle de estoque de farmácia e agendamento de viagens",
+          "Implementação de permissões de acesso e autenticação de usuários",
+          "Processamento de documentos fiscais como SPED e GIA"
         ],
-        techStack: ["React", "Express.js", "MongoDB", "Socket.io"]
+        techStack: ["PHP", "Laravel", "Zend Framework", "JavaScript (jQuery)", "PostgreSQL", "Git"]
       }
     ]
   }

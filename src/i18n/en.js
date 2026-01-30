@@ -78,40 +78,46 @@ const en = {
     description: "My professional journey and key achievements.",
     items: [
       {
-        jobTitle: "Senior Full-Stack Developer",
-        company: "Tech Innovations Inc.",
-        dateRange: "Jan 2022 - Present",
-        description: "Leading the development of scalable web applications using modern technologies.",
+        jobTitle: "FullStack Web & Mobile Developer",
+        company: "GIGATRON FRANCHISING LTDA",
+        dateRange: "Jun 2024 — May 2025",
+        description: "Development and maintenance of ERP web and mobile systems, focusing on integrations, performance, and production stability.",
         achievements: [
-          "Developed and deployed 5+ full-stack applications serving 10k+ users",
-          "Implemented CI/CD pipelines reducing deployment time by 40%",
-          "Mentored junior developers and conducted code reviews"
+          "Integrated ERP with marketplaces such as Shopee, Mercado Livre, Amazon, Magalu, and NuvemShop",
+          "Developed and maintained scalable systems using PHP and PostgreSQL",
+          "Continuously improved a mobile POS application built with React Native",
+          "Implemented native Java modules to integrate Stone and PagBank payment terminals",
+          "Supported third-party integrations and automated operational workflows"
         ],
-        techStack: ["React", "Node.js", "PostgreSQL", "AWS"]
+        techStack: ["PHP", "Laravel", "PostgreSQL", "JavaScript", "React Native", "Java", "Git"]
       },
       {
-        jobTitle: "Full-Stack Developer",
-        company: "Digital Solutions Ltd.",
-        dateRange: "Jun 2020 - Dec 2021",
-        description: "Built responsive web applications and APIs for various clients.",
+        jobTitle: "React Native Developer",
+        company: "GIGATRON FRANCHISING LTDA",
+        dateRange: "Aug 2022 — May 2024",
+        description: "Worked on building a mobile POS application, focusing on performance, hardware integration, and user experience.",
         achievements: [
-          "Created RESTful APIs handling 1M+ requests per month",
-          "Optimized database queries improving performance by 30%",
-          "Collaborated with design team to implement pixel-perfect UIs"
+          "Built a POS mobile application from scratch using React Native",
+          "Implemented offline-first architecture with local data persistence",
+          "Integrated SMART payment terminals from Stone and PagBank",
+          "Enabled Bluetooth printing using the ESCPOS protocol",
+          "Developed a White Label system with customizable UI"
         ],
-        techStack: ["Vue.js", "Laravel", "MySQL", "Docker"]
+        techStack: ["React Native", "JavaScript", "TypeScript", "Java", "SQLite", "Git"]
       },
       {
-        jobTitle: "Junior Developer",
-        company: "StartupXYZ",
-        dateRange: "Mar 2019 - May 2020",
-        description: "Contributed to the development of a SaaS platform from the ground up.",
+        jobTitle: "PHP FullStack Junior Developer",
+        company: "AUDITOR PÚBLICO ASSESSORIA E TECNOLOGIA LTDA",
+        dateRange: "Feb 2021 — Aug 2021",
+        description: "Maintained and supported public sector web systems, working on health, fiscal, and administrative automation modules.",
         achievements: [
-          "Built user authentication system with OAuth integration",
-          "Developed real-time chat feature using WebSockets",
-          "Participated in agile development processes"
+          "Maintained public sector systems for health and fiscal operations",
+          "Built PDF reporting features and automated email workflows",
+          "Implemented pharmacy inventory control and travel scheduling",
+          "Developed user access control and permission systems",
+          "Processed fiscal documents such as SPED and GIA"
         ],
-        techStack: ["React", "Express.js", "MongoDB", "Socket.io"]
+        techStack: ["PHP", "Laravel", "Zend Framework", "JavaScript (jQuery)", "PostgreSQL", "Git"]
       }
     ]
   }
