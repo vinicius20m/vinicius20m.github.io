@@ -56,6 +56,18 @@ const pt = {
   contact: {
     title: "Contato",
     description: "Entre em contato. Este é um espaço reservado para a seção de contato."
+  },
+  skills: {
+    title: "Habilidades",
+    description: "Aqui estão as tecnologias e ferramentas com as quais trabalho.",
+    categories: {
+      languages: "Linguagens",
+      frameworksPlatforms: "Frameworks & Plataformas",
+      librariesUI: "Bibliotecas & UI",
+      databases: "Bancos de Dados",
+      toolsQuality: "Ferramentas & Qualidade",
+      engineeringPractices: "Práticas de Engenharia"
+    }
   }
 };
 
