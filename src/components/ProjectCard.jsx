@@ -28,11 +28,11 @@ const ProjectCard = ({ project, variant }) => {
             <img
               src={project.thumbnail}
               alt={project.title}
-              className={`w-full object-cover ${isHero ? 'h-68 md:h-90' : 'h-45'}`}
+              className={`w-full object-cover ${isHero ? 'h-70 md:h-104' : 'h-58'}`}
               onError={handleImageError}
             />
           ) : (
-            <div className={`w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center ${isHero ? 'h-68 md:h-90' : 'h-45'}`}>
+            <div className={`w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center ${isHero ? 'h-70 md:h-104' : 'h-58'}`}>
               <span className="text-gray-500 dark:text-gray-400">Image not available</span>
             </div>
           )}
@@ -62,8 +62,8 @@ const ProjectCard = ({ project, variant }) => {
             </svg>
           </a>
         </div>
-        <div className="p-6">
-          <h3 className={`font-bold text-gray-900 dark:text-white mb-2 ${isHero ? 'text-2xl' : 'text-xl'}`}>
+        <div className={`${isHero ? 'p-5' : 'p-3'}`}>
+          <h3 className={`font-bold text-gray-900 dark:text-white mb-1 ${isHero ? 'text-2xl' : 'text-xl'}`}>
             {project.title}
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -73,7 +73,7 @@ const ProjectCard = ({ project, variant }) => {
             {project.techStack.map((tech, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
+                className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 {tech}
               </span>

@@ -5,7 +5,7 @@ import toDoThumb from '../assets/images/videoframe_250136.png'
 const en = {
   header: {
     nav: {
-      hero: "Hero",
+      hero: "Home",
       projects: "Projects",
       about: "About",
       contact: "Contact"
@@ -68,6 +68,10 @@ const en = {
       toolsQuality: "Quality and Tools",
       engineeringPractices: "Engeneering Practices"
     }
+  },
+  certificates: {
+    title: "Certificates",
+    description: "Here are some of my professional certificates and achievements."
   }
 };
 

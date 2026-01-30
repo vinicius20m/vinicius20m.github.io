@@ -38,7 +38,7 @@ const SkillsSection = () => {
   const skills = translations.skills;
 
   return (
-    <section id="skills" className="min-h-screen py-20 bg-gray-200 dark:bg-gray-800 px-4">
+    <section id="skills" className="min-h-screen py-20 bg-gray-100 dark:bg-gray-900 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">

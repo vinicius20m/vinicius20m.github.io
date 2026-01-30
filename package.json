@@ -12,8 +12,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "embla-carousel-autoplay": "^8.6.0",
-    "embla-carousel-react": "^8.6.0",
+    "embla-carousel-autoplay": "9.0.0-rc01",
+		"embla-carousel-react": "9.0.0-rc01",
+		"embla-carousel": "9.0.0-rc01",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
