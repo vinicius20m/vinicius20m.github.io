@@ -68,6 +68,10 @@ const pt = {
       toolsQuality: "Ferramentas & Qualidade",
       engineeringPractices: "Práticas de Engenharia"
     }
+  },
+  certificates: {
+    title: "Certificados",
+    description: "Aqui estão alguns dos meus certificados profissionais e conquistas."
   }
 };
 

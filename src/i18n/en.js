@@ -68,6 +68,10 @@ const en = {
       toolsQuality: "Quality and Tools",
       engineeringPractices: "Engeneering Practices"
     }
+  },
+  certificates: {
+    title: "Certificates",
+    description: "Here are some of my professional certificates and achievements."
   }
 };
 
