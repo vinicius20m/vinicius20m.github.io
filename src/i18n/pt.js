@@ -5,7 +5,7 @@ import toDoThumb from '../assets/images/videoframe_250136.png'
 const pt = {
   header: {
     nav: {
-      hero: "Herói",
+      hero: "Início",
       projects: "Projetos",
       about: "Sobre",
       contact: "Contato"

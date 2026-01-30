@@ -2,26 +2,20 @@
 
 import React, { useState, useCallback, useEffect, useRef } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import Modal from './Modal'
 
 export default function CertificatesCarousel({ certificates }) {
-  const autoplay = useRef(
-    Autoplay({ delay: 1800, stopOnInteraction: false })
-  )
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true },
-    [autoplay.current]
-  )
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' })
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCertificate, setSelectedCertificate] = useState(null)
 
   const tweenFactor = useRef(0)
   const tweenNodes = useRef([])
+  const autoplayInterval = useRef(null)
 
-  const TWEEN_FACTOR_BASE = 0.52
+  const AUTOPLAY_DELAY = 1900
+  const TWEEN_FACTOR_BASE = 0.72
 
   const numberWithinRange = (number, min, max) =>
     Math.min(Math.max(number, min), max)
@@ -34,8 +28,23 @@ export default function CertificatesCarousel({ certificates }) {
     if (emblaApi) emblaApi.goToNext()
   }
 
+  // ✅ AUTOPLAY MANUAL
+  const startAutoplay = () => {
+    stopAutoplay()
+    autoplayInterval.current = setInterval(() => {
+      if (emblaApi) emblaApi.goToNext()
+    }, AUTOPLAY_DELAY)
+  }
+
+  const stopAutoplay = () => {
+    if (autoplayInterval.current) {
+      clearInterval(autoplayInterval.current)
+      autoplayInterval.current = null
+    }
+  }
+
   const openModal = (certificate) => {
-    autoplay.current.stop()
+    stopAutoplay()
     setSelectedCertificate(certificate)
     setIsModalOpen(true)
   }
@@ -43,7 +52,7 @@ export default function CertificatesCarousel({ certificates }) {
   const closeModal = () => {
     setIsModalOpen(false)
     setSelectedCertificate(null)
-    autoplay.current.play()
+    startAutoplay()
   }
 
   const setTweenNodes = useCallback((emblaApi) => {
@@ -82,8 +91,8 @@ export default function CertificatesCarousel({ certificates }) {
         }
 
         const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
-        const scale = numberWithinRange(tweenValue, 0.85, 1)
-        const opacity = numberWithinRange(tweenValue, 0.6, 1)
+        const scale = numberWithinRange(tweenValue, TWEEN_FACTOR_BASE, 1)
+        const opacity = numberWithinRange(tweenValue, 0.5, 1)
 
         const tweenNode = tweenNodes.current[slideIndex]
         if (!tweenNode) return
@@ -101,8 +110,8 @@ export default function CertificatesCarousel({ certificates }) {
     setTweenFactor(emblaApi)
     tweenScale(emblaApi)
 
-    // ✅ START AUTOPLAY SAFELY
-    autoplay.current.play()
+    // ✅ START AUTOPLAY
+    startAutoplay()
 
     emblaApi
       .on('reInit', setTweenNodes)
@@ -111,15 +120,16 @@ export default function CertificatesCarousel({ certificates }) {
       .on('scroll', tweenScale)
       .on('select', tweenScale)
 
-    // ✅ Resume autoplay after drag
-    emblaApi.on('pointerUp', () => {
-      autoplay.current.play()
-    })
+    // ✅ PAUSE autoplay while dragging
+    emblaApi.on('pointerDown', stopAutoplay)
+    emblaApi.on('pointerUp', startAutoplay)
+
+    return () => stopAutoplay()
   }, [emblaApi, tweenScale])
 
   return (
     <>
-      <div className="embla mx-auto max-w-5xl">
+      <div className="embla mx-auto max-w-5xl" onMouseEnter={stopAutoplay} onMouseLeave={startAutoplay}>
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
             {certificates.map((cert, index) => (
@@ -172,9 +182,9 @@ function CertificateCard({ certificate, onClick }) {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div className="embla__slide flex-shrink-0 w-xl p-1 pt-8">
+    <div className="embla__slide flex-shrink-0 w-xl p-1 mx-3 pt-8">
       <div
-        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-50 hover:scale-105 hover:-translate-y-3"
+        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-70 ease-out hover:scale-105 hover:-translate-y-3"
         onClick={onClick}
       >
         {!imageError ? (
