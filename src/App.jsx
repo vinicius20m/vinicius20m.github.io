@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import Hero from './sections/Hero';
 import ProjectsSection from './sections/ProjectsSection';
 import SkillsSection from './sections/SkillsSection';
+import EmblaTestCarousel from './components/EmblaTestCarousel';
 import { useLanguage } from './contexts/LanguageContext';
 
 export default function App() {
@@ -15,6 +16,12 @@ export default function App() {
       <Hero />
       <ProjectsSection />
       <SkillsSection />
+      <section id="test-carousel" className="min-h-screen flex items-center justify-center bg-gray-200 dark:bg-gray-800">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Test Carousel</h2>
+          <EmblaTestCarousel />
+        </div>
+      </section>
       <section id="about" className="min-h-screen flex items-center justify-center bg-gray-300 dark:bg-gray-700">
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{translations.about.title}</h3>
