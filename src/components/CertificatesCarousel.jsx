@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import Modal from './Modal';
 
 export default function CertificatesCarousel({ certificates }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 1800 })]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   const goToPrev = () => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -14,34 +17,65 @@ export default function CertificatesCarousel({ certificates }) {
     if (emblaApi) emblaApi.scrollNext();
   };
 
+  const openModal = (certificate) => {
+    setSelectedCertificate(certificate);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCertificate(null);
+  };
+
   return (
-    <div className="embla mx-auto max-w-4xl">
-      <div className="embla__viewport overflow-hidden" ref={emblaRef}>
-        <div className="embla__container flex">
-          {certificates.map((cert, index) => (
-            <CertificateCard key={index} certificate={cert} />
-          ))}
+    <>
+      <div className="embla mx-auto max-w-4xl">
+        <div className="embla__viewport overflow-hidden" ref={emblaRef}>
+          <div className="embla__container flex">
+            {certificates.map((cert, index) => (
+              <CertificateCard key={index} certificate={cert} onClick={() => openModal(cert)} />
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-between mt-4">
+          <button
+            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
+            onClick={goToPrev}
+          >
+            Previous
+          </button>
+          <button
+            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
+            onClick={goToNext}
+          >
+            Next
+          </button>
         </div>
       </div>
-      <div className="flex justify-between mt-4">
-        <button
-          className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-          onClick={goToPrev}
-        >
-          Previous
-        </button>
-        <button
-          className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-          onClick={goToNext}
-        >
-          Next
-        </button>
-      </div>
-    </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={selectedCertificate?.title || 'Certificate'}
+      >
+        {selectedCertificate && (
+          <div className="w-full h-full">
+            <iframe
+              src={selectedCertificate.pdf}
+              className="w-full h-100 md:h-130 border-0 rounded"
+              title={selectedCertificate.title}
+              onError={() => {
+                // Fallback if PDF fails to load
+                return <p className="text-center text-gray-700 dark:text-gray-300">Unable to load certificate PDF</p>;
+              }}
+            />
+          </div>
+        )}
+      </Modal>
+    </>
   );
 }
 
-function CertificateCard({ certificate }) {
+function CertificateCard({ certificate, onClick }) {
   const [imageError, setImageError] = useState(false);
 
   const handleImageError = () => {
@@ -50,7 +84,10 @@ function CertificateCard({ certificate }) {
 
   return (
     <div className="embla__slide flex-shrink-0 w-full p-4">
-      <div className="relative bg-cover bg-center rounded-lg shadow-lg h-88 cursor-pointer overflow-hidden">
+      <div
+        className="relative bg-cover bg-center rounded-lg shadow-lg h-88 cursor-pointer overflow-hidden"
+        onClick={onClick}
+      >
         {!imageError ? (
           <img
             src={certificate.image}

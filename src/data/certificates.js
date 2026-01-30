@@ -83,7 +83,7 @@ const certificatesData = [
     title: "Introduction to Microservices with .NET",
     image: "/src/assets/certificates/microsservicos com .NET.jpg",
     icon: "/src/assets/certificates/microsservicos com .NET.png",
-    pdf: "/src/assets/certificates/microsserviços com .NET.pdf",
+    pdf: "/src/assets/certificates/microsservicos com .NET.pdf",
     issuer: "Unknown",
     year: "2026"
   },
