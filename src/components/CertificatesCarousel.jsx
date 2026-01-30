@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 export default function CertificatesCarousel({ certificates }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 1800 })]);
 
   const goToPrev = () => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -50,7 +50,7 @@ function CertificateCard({ certificate }) {
 
   return (
     <div className="embla__slide flex-shrink-0 w-full p-4">
-      <div className="relative bg-cover bg-center rounded-lg shadow-lg h-64 cursor-pointer overflow-hidden">
+      <div className="relative bg-cover bg-center rounded-lg shadow-lg h-88 cursor-pointer overflow-hidden">
         {!imageError ? (
           <img
             src={certificate.image}
