@@ -1,20 +1,28 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Modal from './Modal';
 
 export default function CertificatesCarousel({ certificates }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 1800 })]);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [Autoplay({ delay: 1800 })]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+  
+  const tweenFactor = useRef(0)
+  const tweenNodes = useRef([])
+
+  const TWEEN_FACTOR_BASE = 0.52
+  
+  const numberWithinRange = (number, min, max) =>
+    Math.min(Math.max(number, min), max)
 
   const goToPrev = () => {
-    if (emblaApi) emblaApi.scrollPrev();
+    if (emblaApi) emblaApi.goToPrev();
   };
 
   const goToNext = () => {
-    if (emblaApi) emblaApi.scrollNext();
+    if (emblaApi) emblaApi.goToNext();
   };
 
   const openModal = (certificate) => {
@@ -26,6 +34,71 @@ export default function CertificatesCarousel({ certificates }) {
     setIsModalOpen(false);
     setSelectedCertificate(null);
   };
+
+  const setTweenNodes = useCallback((emblaApi) => {
+    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
+      return slideNode.querySelector('.certificate-card')
+    })
+  }, [])
+
+  const setTweenFactor = useCallback((emblaApi) => {
+    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.snapList().length
+  }, [])
+
+  const tweenScale = useCallback((emblaApi, event) => {
+    const engine = emblaApi.internalEngine()
+    const scrollProgress = emblaApi.scrollProgress()
+    const slidesInView = emblaApi.slidesInView()
+    const isScrollEvent = event?.type === 'scroll'
+
+    emblaApi.snapList().forEach((scrollSnap, snapIndex) => {
+      let diffToTarget = scrollSnap - scrollProgress
+      const slidesInSnap = engine.scrollSnapList.slidesBySnap[snapIndex]
+
+      slidesInSnap.forEach((slideIndex) => {
+        if (isScrollEvent && !slidesInView.includes(slideIndex)) return
+
+        if (engine.options.loop) {
+          engine.slideLooper.loopPoints.forEach((loopItem) => {
+            const target = loopItem.target()
+
+            if (slideIndex === loopItem.index && target !== 0) {
+              const sign = Math.sign(target)
+
+              if (sign === -1) {
+                diffToTarget = scrollSnap - (1 + scrollProgress)
+              }
+              if (sign === 1) {
+                diffToTarget = scrollSnap + (1 - scrollProgress)
+              }
+            }
+          })
+        }
+
+        const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current)
+        const scale = numberWithinRange(tweenValue, 0, 1).toString()
+        const opacity = numberWithinRange(tweenValue, 0.5, 1).toString()
+        const tweenNode = tweenNodes.current[slideIndex]
+        tweenNode.style.transform = `scale(${scale})`
+        tweenNode.style.opacity = opacity
+      })
+    })
+  }, [])
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    setTweenNodes(emblaApi)
+    setTweenFactor(emblaApi)
+    tweenScale(emblaApi)
+
+    emblaApi
+      .on('reinit', setTweenNodes)
+      .on('reinit', setTweenFactor)
+      .on('reinit', tweenScale)
+      .on('scroll', tweenScale)
+      .on('slidefocus', tweenScale)
+  }, [emblaApi, tweenScale])
 
   return (
     <>
@@ -83,9 +156,9 @@ function CertificateCard({ certificate, onClick }) {
   };
 
   return (
-    <div className="embla__slide flex-shrink-0 w-2xl p-6 pt-8">
+    <div className="embla__slide flex-shrink-0 w-xl p-1 pt-8">
       <div
-        className="relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden hover:scale-105 hover:-translate-y-5 transition-all duration-300"
+        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden hover:scale-105 hover:-translate-y-5 transition-all duration-50"
         onClick={onClick}
       >
         {!imageError ? (
