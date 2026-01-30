@@ -29,7 +29,7 @@ export default function CertificatesCarousel({ certificates }) {
 
   return (
     <>
-      <div className="embla mx-auto max-w-4xl">
+      <div className="embla mx-auto max-w-5xl">
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
             {certificates.map((cert, index) => (
@@ -83,9 +83,9 @@ function CertificateCard({ certificate, onClick }) {
   };
 
   return (
-    <div className="embla__slide flex-shrink-0 w-full p-4">
+    <div className="embla__slide flex-shrink-0 w-2xl p-6 pt-8">
       <div
-        className="relative bg-cover bg-center rounded-lg shadow-lg h-88 cursor-pointer overflow-hidden"
+        className="relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden hover:scale-105 hover:-translate-y-5 transition-all duration-300"
         onClick={onClick}
       >
         {!imageError ? (
@@ -103,12 +103,14 @@ function CertificateCard({ certificate, onClick }) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <img
-            src={certificate.icon}
-            alt={`${certificate.title} icon`}
-            className="w-35 h-35 object-contain"
-          />
+        <div className="absolute bottom-20 right-11">
+          <div className="bg-slate-200/30 backdrop-blur-md rounded-full border border-slate-200/50 p-2">
+            <img
+              src={certificate.icon}
+              alt={`${certificate.title} icon`}
+              className="w-27 h-27 object-contain"
+            />
+          </div>
         </div>
       </div>
     </div>
