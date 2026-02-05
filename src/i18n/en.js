@@ -50,8 +50,23 @@ const en = {
     ]
   },
   about: {
-    title: "About Me",
-    description: "Learn more about me in this section. Adding content for scrolling test."
+    title: "About",
+    sections: [
+      {
+        subtitle: "Overview",
+        content: [
+          "I am driven by curiosity to understand how things work, especially in the technology universe. My interest goes far beyond programming languages and started long before writing code. I always wanted to understand how systems communicate, how devices work behind the screen, and how everything connects.",
+          "This more analytical view ended up shaping my way of thinking about technology not just as code, but as well-structured solutions for real problems."
+        ]
+      },
+      {
+        subtitle: "Path in programming",
+        content: [
+          "In programming, I never limited myself to a single language or paradigm. I started with the fundamentals of programming logic, exploring different approaches and technologies, and over time I deepened my knowledge in web and mobile development.",
+          "This journey allowed me to move between different stacks, understand varied contexts, and build solutions focused on clarity, maintainability, and technical consistency, always thinking about practical application and delivered value."
+        ]
+      }
+    ]
   },
   contact: {
     title: "Contact",

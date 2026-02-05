@@ -50,8 +50,23 @@ const pt = {
     ]
   },
   about: {
-    title: "Sobre Mim",
-    description: "Saiba mais sobre mim nesta seção. Adicionando conteúdo para teste de rolagem."
+    title: "Sobre",
+    sections: [
+      {
+        subtitle: "Visão geral",
+        content: [
+          "Sou movido pela curiosidade em entender como as coisas funcionam, especialmente no universo da tecnologia. Meu interesse vai muito além das linguagens de programação e começou bem antes de escrever código. Sempre quis entender como sistemas se comunicam, como dispositivos funcionam por trás da tela e como tudo se conecta.",
+          "Esse olhar mais analítico acabou moldando minha forma de pensar tecnologia não apenas como código, mas como soluções bem estruturadas para problemas reais."
+        ]
+      },
+      {
+        subtitle: "Caminho na programação",
+        content: [
+          "Na programação, nunca me limitei a uma única linguagem ou paradigma. Comecei pelos fundamentos de lógica de programação, explorando diferentes abordagens e tecnologias, e ao longo do tempo aprofundei meus conhecimentos no desenvolvimento web e mobile.",
+          "Essa trajetória me permitiu transitar entre diferentes stacks, compreender contextos variados e construir soluções com foco em clareza, manutenibilidade e consistência técnica, sempre pensando na aplicação prática e no valor entregue."
+        ]
+      }
+    ]
   },
   contact: {
     title: "Contato",
