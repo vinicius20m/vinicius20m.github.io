@@ -119,7 +119,31 @@ const pt = {
         ],
         techStack: ["PHP", "Laravel", "Zend Framework", "JavaScript (jQuery)", "PostgreSQL", "Git"]
       }
-    ]
+    ],
+    courses: {
+      title: "Cursos",
+      description: "Cursos realizados para aprimorar minhas habilidades.",
+      items: [
+        {
+          title: "Lógica de Programação",
+          institution: "PREPARA CURSOS PROFISSIONALIZANTES",
+          year: "2017",
+          bullets: [
+            "Conceitos básicos de lógica de programação usando Java, Pascal e Delphi",
+            "Conceitos introdutórios de banco de dados"
+          ]
+        },
+        {
+          title: "Operador de Computador",
+          institution: "PREPARA CURSOS PROFISSIONALIZANTES",
+          year: "2015",
+          bullets: [
+            "Funções e ferramentas do Sistema Operacional Windows 7",
+            "Pacote Office Completo"
+          ]
+        }
+      ]
+    }
   }
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import ExperienceCoursesSubSection from './ExperienceCoursesSubSection';
 
 const ExperienceSection = () => {
   const { translations } = useLanguage();
@@ -97,6 +98,8 @@ const ExperienceSection = () => {
             ))}
           </div>
         </div>
+
+        <ExperienceCoursesSubSection />
       </div>
     </section>
   );
