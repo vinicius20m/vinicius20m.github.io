@@ -70,7 +70,7 @@ const pt = {
   },
   contact: {
     title: "Contato",
-    description: "Entre em contato. Este é um espaço reservado para a seção de contato."
+    description: "Estou aberto a oportunidades profissionais e conversas. Vamos nos conectar!"
   },
   skills: {
     title: "Habilidades",
