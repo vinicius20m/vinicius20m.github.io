@@ -70,7 +70,7 @@ const en = {
   },
   contact: {
     title: "Contact",
-    description: "Get in touch. This is a placeholder for the contact section."
+    description: "I'm open to professional opportunities and conversations. Let's connect!"
   },
   skills: {
     title: "Skills",
