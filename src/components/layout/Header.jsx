@@ -24,6 +24,15 @@ export default function Header() {
                 <a href="#projects" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.projects}</a>
               </li>
               <li>
+                <a href="#skills" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.skills}</a>
+              </li>
+              <li>
+                <a href="#certificates" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.certificates}</a>
+              </li>
+              <li>
+                <a href="#experience" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.experience}</a>
+              </li>
+              <li>
                 <a href="#about" className="hover:underline text-gray-900 dark:text-gray-100">{translations.header.nav.about}</a>
               </li>
               <li>
