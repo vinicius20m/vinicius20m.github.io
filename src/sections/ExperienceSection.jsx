@@ -39,7 +39,7 @@ const ExperienceSection = () => {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="absolute md:left-7 left-1.5 w-5 h-5 bg-blue-500 rounded-full border-5 border-gray-100 dark:border-gray-900 z-10"></div>
+                <div className="absolute md:left-7 left-1.5 w-5 h-5 bg-blue-500 rounded-full border-5 border-gray-100 dark:border-gray-900 z-5"></div>
 
                 {/* Content card */}
                 <div className="md:ml-16 ml-2 flex-1 max-w-4xl">
