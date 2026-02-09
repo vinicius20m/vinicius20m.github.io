@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import Hero from '../../sections/Hero';
 import ProjectsSection from '../../sections/ProjectsSection';
@@ -11,7 +10,7 @@ import ContactSection from '../../sections/ContactSection';
 
 export default function Body() {
   return (
-    <main className="flex-1 lg:max-w-7xl max-w-full px-1.5 md:px-10 lg:px-24">
+    <main className="flex-1 mx-auto lg:max-w-7xl max-w-full px-1.5 md:px-10 lg:px-24">
       <Hero />
       <ProjectsSection />
       <SkillsSection />
