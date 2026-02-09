@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ExperienceCoursesSubSection from './ExperienceCoursesSubSection';
+import Pill from '../components/Pill';
 
 const ExperienceSection = () => {
   const { translations } = useLanguage();
@@ -83,12 +84,7 @@ const ExperienceSection = () => {
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2">
                         {item.techStack.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
-                          >
-                            {tech}
-                          </span>
+                          <Pill key={techIndex} text={tech} />
                         ))}
                       </div>
                     </div>

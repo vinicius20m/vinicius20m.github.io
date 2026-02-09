@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from './Modal';
+import Pill from './Pill';
 
 const ProjectCard = ({ project, variant }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,12 +72,7 @@ const ProjectCard = ({ project, variant }) => {
           </p>
           <div className="flex flex-wrap gap-2">
             {project.techStack.map((tech, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                {tech}
-              </span>
+              <Pill key={index} text={tech} />
             ))}
           </div>
         </div>
