@@ -7,6 +7,9 @@ const pt = {
     nav: {
       hero: "Início",
       projects: "Projetos",
+      skills: "Habilidades",
+      certificates: "Certificados",
+      experience: "Experiência",
       about: "Sobre",
       contact: "Contato"
     }

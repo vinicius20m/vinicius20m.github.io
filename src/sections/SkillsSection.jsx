@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import skillsData from '../data/skills';
+import Pill from '../components/Pill';
 
 const SkillCard = ({ skill }) => {
   const [imageError, setImageError] = useState(false);
@@ -38,7 +39,7 @@ const SkillsSection = () => {
   const skills = translations.skills;
 
   return (
-    <section id="skills" className="min-h-screen py-20 bg-gray-100 dark:bg-gray-900 px-4">
+    <section id="skills" className="min-h-screen py-20 md:px-5 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -126,12 +127,7 @@ const SkillsSection = () => {
           </h3>
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             {skillsData.engineeringPractices.map((practice, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                {practice}
-              </span>
+              <Pill key={index} text={practice} />
             ))}
           </div>
         </div>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import Pill from '../components/Pill';
 
 const Hero = () => {
   const { translations } = useLanguage();
   const hero = translations.hero;
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
       <div className="text-center max-w-2xl">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
           {hero.name}
@@ -19,12 +20,7 @@ const Hero = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {hero.techStack.map((tech, index) => (
-            <span
-              key={index}
-              className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
-            >
-              {tech}
-            </span>
+            <Pill key={index} text={tech} />
           ))}
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

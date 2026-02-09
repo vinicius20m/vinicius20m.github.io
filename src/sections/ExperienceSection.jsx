@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ExperienceCoursesSubSection from './ExperienceCoursesSubSection';
+import Pill from '../components/Pill';
 
 const ExperienceSection = () => {
   const { translations } = useLanguage();
@@ -13,7 +14,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="min-h-screen py-20 bg-gray-100 dark:bg-gray-900 md:px-4">
+    <section id="experience" className="min-h-screen py-20 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl md:mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
@@ -39,7 +40,7 @@ const ExperienceSection = () => {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="absolute md:left-7 left-1.5 w-5 h-5 bg-blue-500 rounded-full border-5 border-gray-100 dark:border-gray-900 z-10"></div>
+                <div className="absolute md:left-7 left-1.5 w-5 h-5 bg-blue-500 rounded-full border-5 border-gray-100 dark:border-gray-900 z-5"></div>
 
                 {/* Content card */}
                 <div className="md:ml-16 ml-2 flex-1 max-w-4xl">
@@ -83,12 +84,7 @@ const ExperienceSection = () => {
                       {/* Tech Stack */}
                       <div className="flex flex-wrap gap-2">
                         {item.techStack.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200"
-                          >
-                            {tech}
-                          </span>
+                          <Pill key={techIndex} text={tech} />
                         ))}
                       </div>
                     </div>

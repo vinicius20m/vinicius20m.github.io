@@ -32,7 +32,7 @@ const ExperienceCoursesSubSection = () => {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="absolute md:left-7 left-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-100 dark:border-gray-900 z-10"></div>
+                <div className="absolute md:left-7 left-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-100 dark:border-gray-900 z-5"></div>
 
                 {/* Content card */}
                 <div className="md:ml-16 ml-2 flex-1 max-w-3xl">

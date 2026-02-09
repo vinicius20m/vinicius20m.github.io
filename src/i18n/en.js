@@ -7,6 +7,9 @@ const en = {
     nav: {
       hero: "Home",
       projects: "Projects",
+      skills: "Skills",
+      certificates: "Certificates",
+      experience: "Experience",
       about: "About",
       contact: "Contact"
     }
