@@ -7,7 +7,7 @@ export default function Header() {
   const { language, toggleLanguage, translations } = useLanguage();
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-lg z-10 py-6 border-b border-gray-200 dark:border-gray-700">
+    <header className="sticky top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-lg z-10 py-6 border-b border-gray-200 dark:border-gray-700">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Left area: placeholder name/logo */}
