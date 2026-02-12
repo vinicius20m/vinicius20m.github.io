@@ -16,11 +16,14 @@ const en = {
   },
   hero: {
     name: "Vinicius Mendes",
-    role: "Full-Stack Developer",
-    description: "Passionate about creating innovative web solutions with modern technologies.",
+    microLabel: "Full-Stack Developer",
+    headline: "Building solutions with quality and performance",
+    subtext: "Experience with React, PHP and modern architecture. Turning ideas into scalable and functional solutions.",
     techStack: ["PHP", "Laravel", "Livewire", "JavaScript", "React", "Tailwind"],
-    button1: "View Projects",
-    button2: "Contact Me"
+    projectsButton: "View Projects",
+    contactButton: "Contact",
+    darkModeButton: "🌙",
+    languageButton: "PT | EN"
   },
   projects: {
     title: "Projects",
