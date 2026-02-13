@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <>
       <header className={`sticky top-0 w-full z-10 transition-all transition-colors duration-500 border-b border-gray-200 dark:border-gray-700 ${isCompact
-        ? 'bg-white/67 dark:bg-gray-900/65 backdrop-blur-sm shadow-lg py-1 sm:py-2'
+        ? 'bg-white/67 dark:bg-gray-900/65 backdrop-blur-sm shadow-lg py-1'
         : 'bg-gradient-to-b from-blue-700/20 to-gray-100 dark:from-sky-700/30 dark:to-sky-950/30 shadow-xl py-2 sm:py-4 border-gray-300 dark:border-slate-800/40'}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">

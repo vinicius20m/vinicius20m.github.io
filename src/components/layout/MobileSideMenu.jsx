@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToSection, translations }) {
+export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToSection, translations, isCompact }) {
 
-  const isCompact = false;
+  // const isCompact = false;
   const handleLinkClick = (action) => {
     if (action === 'home') {
       scrollToTop();
@@ -22,7 +22,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
         />
       )}
       <div
-        className={`fixed top-[3rem] right-0 h-full w-64 z-40 transition-transform duration-300 ease-in-out transform ${
+        className={`fixed ${isCompact ? 'top-[2.8rem]' : 'top-[4.2rem]'} right-0 h-full w-64 z-40 transition-all duration-140 ease-in-out transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } bg-white/67 dark:bg-gray-900/65 backdrop-blur-sm shadow-lg md:hidden`}
         onClick={(e) => e.stopPropagation()}
@@ -33,9 +33,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('home')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.hero}
                 </button>
@@ -43,9 +41,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('projects')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.projects}
                 </button>
@@ -53,9 +49,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('skills')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.skills}
                 </button>
@@ -63,9 +57,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('certificates')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.certificates}
                 </button>
@@ -73,9 +65,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('experience')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.experience}
                 </button>
@@ -83,9 +73,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('about')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.about}
                 </button>
@@ -93,9 +81,7 @@ export default function MobileSideMenu({ isOpen, onClose, scrollToTop, scrollToS
               <li>
                 <button
                   onClick={() => handleLinkClick('contact')}
-                  className={`block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 ${
-                    isCompact ? 'text-sm' : 'text-base'
-                  }`}
+                  className="block w-full text-left text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all duration-150 p-4 text-base"
                 >
                   {translations.header.nav.contact}
                 </button>
