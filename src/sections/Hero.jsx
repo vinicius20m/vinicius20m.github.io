@@ -80,12 +80,12 @@ const Hero = () => {
             </div>
           </div>
           {/* Photo */}
-          <div className="hidden md:block border border-2xl border-sky-700/40 rounded-full w-full lg:w-2/5 flex justify-center lg:justify-end overflow-hidden max-h-[500px] shadow-2xl">
+          <div className="hidden lg:block border border-2xl border-sky-700/40 rounded-full w-full lg:w-2/5 flex justify-center lg:justify-end overflow-hidden max-h-[500px] h-114 shadow-2xl">
             <div className="relative max-w-[480px]">
               <img
                 src={profilePic}
                 alt="Profile"
-                className="relative scale-127 right-1 w-full h-auto object-cover"
+                className="relative scale-122 bottom-2 right-0.5 w-full h-auto object-cover"
               />
             </div>
           </div>
