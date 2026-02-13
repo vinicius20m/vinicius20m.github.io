@@ -58,7 +58,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={scrollToTop}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.hero}
                   </button>
@@ -66,7 +66,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={() => scrollToSection('projects')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.projects}
                   </button>
@@ -74,7 +74,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={() => scrollToSection('skills')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.skills}
                   </button>
@@ -82,7 +82,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={() => scrollToSection('certificates')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.certificates}
                   </button>
@@ -90,7 +90,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={() => scrollToSection('experience')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.experience}
                   </button>
@@ -98,7 +98,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={() => scrollToSection('about')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.about}
                   </button>
@@ -106,7 +106,7 @@ export default function Header() {
                 <li>
                   <button
                     onClick={() => scrollToSection('contact')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-base'}`}
+                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
                   >
                     {translations.header.nav.contact}
                   </button>
@@ -124,7 +124,7 @@ export default function Header() {
               </button>
               <button
                 onClick={toggleLanguage}
-                className={`hover:opacity-75 text-gray-900 dark:text-gray-100 hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-200 ${isCompact ? 'text-sm' : 'text-base'}`}
+                className={`hover:opacity-75 text-gray-900 dark:text-gray-100 hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-200 ${isCompact ? 'text-sm' : 'text-lg'}`}
               >
                 {language.toUpperCase()}
               </button>
