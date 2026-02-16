@@ -129,7 +129,25 @@ export default function CertificatesCarousel({ certificates }) {
 
   return (
     <>
-      <div className="embla mx-auto max-w-5xl" onMouseEnter={stopAutoplay} onMouseLeave={startAutoplay}>
+      <div className="embla mx-auto max-w-5xl relative" onMouseEnter={stopAutoplay} onMouseLeave={startAutoplay}>
+        {/* Previous Button */}
+        <button
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-200"
+          onClick={goToPrev}
+          aria-label="Previous"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-10 h-10"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
             {certificates.map((cert, index) => (
@@ -142,21 +160,23 @@ export default function CertificatesCarousel({ certificates }) {
           </div>
         </div>
 
-        <div className="flex justify-between mt-4">
-          <button
-            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-            onClick={goToPrev}
+        {/* Next Button */}
+        <button
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-200"
+          onClick={goToNext}
+          aria-label="Next"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-10 h-10"
           >
-            Previous
-          </button>
-
-          <button
-            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-            onClick={goToNext}
-          >
-            Next
-          </button>
-        </div>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
       </div>
 
       <Modal
