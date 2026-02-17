@@ -21,11 +21,19 @@ export default function CertificatesCarousel({ certificates }) {
     Math.min(Math.max(number, min), max)
 
   const goToPrev = () => {
-    if (emblaApi) emblaApi.goToPrev()
+    if (emblaApi) {
+      stopAutoplay()
+      emblaApi.goToPrev()
+      startAutoplay()
+    }
   }
 
   const goToNext = () => {
-    if (emblaApi) emblaApi.goToNext()
+    if (emblaApi) {
+      stopAutoplay()
+      emblaApi.goToNext()
+      startAutoplay()
+    }
   }
 
   // ✅ AUTOPLAY MANUAL
@@ -162,7 +170,7 @@ export default function CertificatesCarousel({ certificates }) {
           
         {/* Previous Button */}
         <button
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-200"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 active:scale-70 transition-all duration-200"
           onClick={goToPrev}
           aria-label="Previous"
         >
@@ -192,7 +200,7 @@ export default function CertificatesCarousel({ certificates }) {
 
         {/* Next Button */}
         <button
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-200"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 active:scale-70 transition-all duration-200"
           onClick={goToNext}
           aria-label="Next"
         >
