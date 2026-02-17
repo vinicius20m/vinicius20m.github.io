@@ -21,11 +21,19 @@ export default function CertificatesCarousel({ certificates }) {
     Math.min(Math.max(number, min), max)
 
   const goToPrev = () => {
-    if (emblaApi) emblaApi.goToPrev()
+    if (emblaApi) {
+      stopAutoplay()
+      emblaApi.goToPrev()
+      startAutoplay()
+    }
   }
 
   const goToNext = () => {
-    if (emblaApi) emblaApi.goToNext()
+    if (emblaApi) {
+      stopAutoplay()
+      emblaApi.goToNext()
+      startAutoplay()
+    }
   }
 
   // ✅ AUTOPLAY MANUAL
@@ -129,7 +137,55 @@ export default function CertificatesCarousel({ certificates }) {
 
   return (
     <>
-      <div className="embla mx-auto max-w-5xl" onMouseEnter={stopAutoplay} onMouseLeave={startAutoplay}>
+      <div className="embla mx-auto max-w-5xl relative" onMouseEnter={stopAutoplay} onMouseLeave={startAutoplay}>
+
+        {/* Overlay shadows */}
+        <div>  
+          {/* Left side - original layer */}
+          <div 
+            className="absolute left-0 top-0 bottom-0 w-16 md:w-28 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent dark:to-gray-900/5 opacity-0 md:opacity-100 pointer-events-none z-10"
+            aria-hidden="true"
+          />
+          
+          
+          {/* Left side - longer layer */}
+          <div 
+            className="absolute left-0 top-0 bottom-0 w-24 md:w-68 bg-gradient-to-r from-gray-100/60 dark:from-gray-900/90 to-transparent opacity-0 md:opacity-50 pointer-events-none z-8"
+            aria-hidden="true"
+          />
+          
+          {/* Right side - original layer */}
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-16 md:w-28 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent dark:to-gray-900/5 opacity-0 md:opacity-100 pointer-events-none z-10"
+            aria-hidden="true"
+          />
+          
+          
+          {/* Right side - longer layer */}
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-24 md:w-68 bg-gradient-to-l from-gray-100/60 dark:from-gray-900/90 to-transparent opacity-0 md:opacity-50 pointer-events-none z-8"
+            aria-hidden="true"
+          />
+        </div>
+          
+        {/* Previous Button */}
+        <button
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 active:scale-70 transition-all duration-200"
+          onClick={goToPrev}
+          aria-label="Previous"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-10 h-10"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
             {certificates.map((cert, index) => (
@@ -142,21 +198,23 @@ export default function CertificatesCarousel({ certificates }) {
           </div>
         </div>
 
-        <div className="flex justify-between mt-4">
-          <button
-            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-            onClick={goToPrev}
+        {/* Next Button */}
+        <button
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 active:scale-70 transition-all duration-200"
+          onClick={goToNext}
+          aria-label="Next"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-10 h-10"
           >
-            Previous
-          </button>
-
-          <button
-            className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700"
-            onClick={goToNext}
-          >
-            Next
-          </button>
-        </div>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
       </div>
 
       <Modal
@@ -182,9 +240,9 @@ function CertificateCard({ certificate, onClick }) {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div className="embla__slide flex-shrink-0 w-xl p-1 mx-3 pt-8">
+    <div className="embla__slide flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-xl p-1 sm:p-2 mx-2 sm:mx-3 pt-4 sm:pt-8">
       <div
-        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-70 ease-out hover:scale-105 hover:-translate-y-3"
+        className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-72 sm:h-80 md:h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-70 ease-out hover:scale-105 hover:-translate-y-3"
         onClick={onClick}
       >
         {!imageError ? (
@@ -202,14 +260,14 @@ function CertificateCard({ certificate, onClick }) {
           />
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-        <div className="absolute bottom-20 right-11">
-          <div className="bg-slate-200/30 backdrop-blur-md rounded-full border border-slate-200/50 p-2">
+        <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0 left-auto bottom-42 right-9 md:bottom-20 md:right-9">
+          <div className="bg-slate-400/30 backdrop-blur-md rounded-full border border-slate-200/50 p-1.5 sm:p-2">
             <img
               src={certificate.icon}
               alt={`${certificate.title} icon`}
-              className="w-27 h-27 object-contain"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-27 md:h-27 object-contain"
             />
           </div>
         </div>
