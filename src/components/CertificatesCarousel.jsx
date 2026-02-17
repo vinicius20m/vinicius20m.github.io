@@ -133,13 +133,29 @@ export default function CertificatesCarousel({ certificates }) {
 
         {/* Overlay shadows */}
         <div>  
+          {/* Left side - original layer */}
           <div 
-            className="absolute left-0 top-0 bottom-0 w-16 md:w-34 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent opacity-0 md:opacity-100 pointer-events-none z-10"
+            className="absolute left-0 top-0 bottom-0 w-16 md:w-28 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent dark:to-gray-900/5 opacity-0 md:opacity-100 pointer-events-none z-10"
             aria-hidden="true"
           />
           
+          
+          {/* Left side - longer layer */}
           <div 
-            className="absolute right-0 top-0 bottom-0 w-16 md:w-34 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent opacity-0 md:opacity-100 pointer-events-none z-10"
+            className="absolute left-0 top-0 bottom-0 w-24 md:w-68 bg-gradient-to-r from-gray-100/60 dark:from-gray-900/90 to-transparent opacity-0 md:opacity-50 pointer-events-none z-8"
+            aria-hidden="true"
+          />
+          
+          {/* Right side - original layer */}
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-16 md:w-28 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent dark:to-gray-900/5 opacity-0 md:opacity-100 pointer-events-none z-10"
+            aria-hidden="true"
+          />
+          
+          
+          {/* Right side - longer layer */}
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-24 md:w-68 bg-gradient-to-l from-gray-100/60 dark:from-gray-900/90 to-transparent opacity-0 md:opacity-50 pointer-events-none z-8"
             aria-hidden="true"
           />
         </div>
