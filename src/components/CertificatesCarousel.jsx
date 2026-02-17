@@ -130,6 +130,20 @@ export default function CertificatesCarousel({ certificates }) {
   return (
     <>
       <div className="embla mx-auto max-w-5xl relative" onMouseEnter={stopAutoplay} onMouseLeave={startAutoplay}>
+
+        {/* Overlay shadows */}
+        <div>  
+          <div 
+            className="absolute left-0 top-0 bottom-0 w-16 md:w-34 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent opacity-0 md:opacity-100 pointer-events-none z-10"
+            aria-hidden="true"
+          />
+          
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-16 md:w-34 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent opacity-0 md:opacity-100 pointer-events-none z-10"
+            aria-hidden="true"
+          />
+        </div>
+          
         {/* Previous Button */}
         <button
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-17 h-17 flex items-center justify-center bg-black/40 backdrop-blur-sm rounded-full text-white opacity-60 hover:opacity-100 hover:scale-110 transition-all duration-200"
