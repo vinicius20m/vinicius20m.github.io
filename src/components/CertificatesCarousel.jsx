@@ -9,6 +9,19 @@ export default function CertificatesCarousel({ certificates }) {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedCertificate, setSelectedCertificate] = useState(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const tweenFactor = useRef(0)
   const tweenNodes = useRef([])
@@ -224,14 +237,23 @@ export default function CertificatesCarousel({ certificates }) {
       >
         {selectedCertificate && (
           <div className="w-full h-full">
-            <iframe
-              src={selectedCertificate.pdf}
-              className="w-full h-100 md:h-130 border-0 rounded"
-              title={selectedCertificate.title}
-            />
+            {isMobile ? (
+              <img
+                src={selectedCertificate.image}
+                alt={selectedCertificate.title}
+                className="w-full h-auto max-h-[70vh] object-contain rounded"
+              />
+            ) : (
+              <iframe
+                src={selectedCertificate.pdf}
+                className="w-full h-[30rem] md:h-[30rem] border-0 rounded"
+                title={selectedCertificate.title}
+              />
+            )}
           </div>
         )}
       </Modal>
+
     </>
   )
 }
