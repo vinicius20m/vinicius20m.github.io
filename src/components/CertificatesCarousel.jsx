@@ -284,15 +284,17 @@ function CertificateCard({ certificate, onClick }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-        <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0 left-auto bottom-42 right-9 md:bottom-20 md:right-9">
-          <div className="bg-slate-400/30 backdrop-blur-md rounded-full border border-slate-200/50 p-1.5 sm:p-2">
-            <img
-              src={certificate.icon}
-              alt={`${certificate.title} icon`}
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-27 md:h-27 object-contain"
-            />
+        {certificate.icon && (
+          <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0 left-auto bottom-42 right-9 md:bottom-20 md:right-9">
+            <div className="bg-slate-400/30 backdrop-blur-md rounded-full border border-slate-200/50 p-1.5 sm:p-2">
+              <img
+                src={certificate.icon}
+                alt={`${certificate.title} icon`}
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-27 md:h-27 object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )

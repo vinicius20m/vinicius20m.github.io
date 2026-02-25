@@ -34,6 +34,8 @@ import microsservicosDotnetPdf from '../assets/certificates/microsservicos com .
 import phpOoExceptionsImage from '../assets/certificates/php oo exceptions and database.jpg';
 import phpOoExceptionsIcon from '../assets/certificates/php oo exceptions and database.png';
 import phpOoExceptionsPdf from '../assets/certificates/php oo exceptions and database.pdf';
+import preparaImage from '../assets/certificates/Certificado PREPARA.jpg';
+import preparaPdf from '../assets/certificates/Certificado PREPARA.pdf';
 
 const certificatesData = [
   {
@@ -129,6 +131,14 @@ const certificatesData = [
     image: phpOoExceptionsImage,
     icon: phpOoExceptionsIcon,
     pdf: phpOoExceptionsPdf,
+    issuer: "Unknown",
+    year: "2026"
+  },
+  {
+    title: "PREPARA Certificate",
+    image: preparaImage,
+    icon: null,
+    pdf: preparaPdf,
     issuer: "Unknown",
     year: "2026"
   }
