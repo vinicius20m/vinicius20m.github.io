@@ -127,6 +127,14 @@ const certificatesData = [
     year: "2026"
   },
   {
+    title: "PREPARA Certificate",
+    image: preparaImage,
+    icon: null,
+    pdf: preparaPdf,
+    issuer: "Unknown",
+    year: "2026"
+  },
+  {
     title: "Object-Oriented PHP, Exceptions and Databases",
     image: phpOoExceptionsImage,
     icon: phpOoExceptionsIcon,
@@ -134,14 +142,6 @@ const certificatesData = [
     issuer: "Unknown",
     year: "2026"
   },
-  {
-    title: "PREPARA Certificate",
-    image: preparaImage,
-    icon: null,
-    pdf: preparaPdf,
-    issuer: "Unknown",
-    year: "2026"
-  }
 ];
 
 export default certificatesData;

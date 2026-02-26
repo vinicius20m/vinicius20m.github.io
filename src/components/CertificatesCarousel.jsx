@@ -145,7 +145,13 @@ export default function CertificatesCarousel({ certificates }) {
     emblaApi.on('pointerDown', stopAutoplay)
     emblaApi.on('pointerUp', startAutoplay)
 
-    return () => stopAutoplay()
+    const handleStopAutoplay = () => stopAutoplay()
+    window.addEventListener('stop-carousel-autoplay', handleStopAutoplay)
+
+    return () => {
+      stopAutoplay()
+      window.removeEventListener('stop-carousel-autoplay', handleStopAutoplay)
+    }
   }, [emblaApi, tweenScale])
 
   return (
@@ -206,6 +212,7 @@ export default function CertificatesCarousel({ certificates }) {
                 key={index}
                 certificate={cert}
                 onClick={() => openModal(cert)}
+                id={cert.title === 'PREPARA Certificate' ? 'prepara-certificate' : undefined}
               />
             ))}
           </div>
@@ -258,11 +265,11 @@ export default function CertificatesCarousel({ certificates }) {
   )
 }
 
-function CertificateCard({ certificate, onClick }) {
+function CertificateCard({ certificate, onClick, id }) {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div className="embla__slide flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-xl p-1 sm:p-2 mx-2 sm:mx-3 pt-4 sm:pt-8">
+    <div id={id} className="embla__slide flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-xl p-1 sm:p-2 mx-2 sm:mx-3 pt-4 sm:pt-8">
       <div
         className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-72 sm:h-80 md:h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-70 ease-out hover:scale-105 hover:-translate-y-3"
         onClick={onClick}
