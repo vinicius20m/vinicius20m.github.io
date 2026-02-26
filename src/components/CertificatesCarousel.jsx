@@ -145,7 +145,13 @@ export default function CertificatesCarousel({ certificates }) {
     emblaApi.on('pointerDown', stopAutoplay)
     emblaApi.on('pointerUp', startAutoplay)
 
-    return () => stopAutoplay()
+    const handleStopAutoplay = () => stopAutoplay()
+    window.addEventListener('stop-carousel-autoplay', handleStopAutoplay)
+
+    return () => {
+      stopAutoplay()
+      window.removeEventListener('stop-carousel-autoplay', handleStopAutoplay)
+    }
   }, [emblaApi, tweenScale])
 
   return (
@@ -206,6 +212,7 @@ export default function CertificatesCarousel({ certificates }) {
                 key={index}
                 certificate={cert}
                 onClick={() => openModal(cert)}
+                id={cert.title === 'PREPARA Certificate' ? 'prepara-certificate' : undefined}
               />
             ))}
           </div>
@@ -258,11 +265,11 @@ export default function CertificatesCarousel({ certificates }) {
   )
 }
 
-function CertificateCard({ certificate, onClick }) {
+function CertificateCard({ certificate, onClick, id }) {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <div className="embla__slide flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-xl p-1 sm:p-2 mx-2 sm:mx-3 pt-4 sm:pt-8">
+    <div id={id} className="embla__slide flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-xl p-1 sm:p-2 mx-2 sm:mx-3 pt-4 sm:pt-8">
       <div
         className="certificate-card relative bg-cover bg-center rounded-lg shadow-lg h-72 sm:h-80 md:h-88 border border-slate-700/40 cursor-pointer overflow-hidden transition-transform duration-70 ease-out hover:scale-105 hover:-translate-y-3"
         onClick={onClick}
@@ -284,15 +291,17 @@ function CertificateCard({ certificate, onClick }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-        <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0 left-auto bottom-42 right-9 md:bottom-20 md:right-9">
-          <div className="bg-slate-400/30 backdrop-blur-md rounded-full border border-slate-200/50 p-1.5 sm:p-2">
-            <img
-              src={certificate.icon}
-              alt={`${certificate.title} icon`}
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-27 md:h-27 object-contain"
-            />
+        {certificate.icon && (
+          <div className="absolute bottom-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0 left-auto bottom-42 right-9 md:bottom-20 md:right-9">
+            <div className="bg-slate-400/30 backdrop-blur-md rounded-full border border-slate-200/50 p-1.5 sm:p-2">
+              <img
+                src={certificate.icon}
+                alt={`${certificate.title} icon`}
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-27 md:h-27 object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )
