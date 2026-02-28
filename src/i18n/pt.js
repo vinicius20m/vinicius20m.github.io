@@ -101,15 +101,15 @@ const pt = {
       {
         jobTitle: "PHP Web Full-Stack Developer",
         company: "CEOPAG INSTITUICAO DE PAGAMENTO S.A.",
-        dateRange: "Ago 2025 — Jan 2026",
+        dateRange: "Out 2025 — Jan 2026",
         description: "Desenvolvedor Web em empresa do setor financeiro (subadquirente), atuando na evolução de uma solução bancária robusta, segura, responsiva e orientada a alta volumetria transacional.",
         achievements: [
-          "Desenvolvimento de módulos críticos da aplicação utilizando Laravel, Livewire e Alpine, seguindo abordagem mobile-first",
+          "Manutenção de módulos críticos da aplicação utilizando Laravel, Livewire e Alpine, seguindo abordagem mobile-first",
           "Implementação completa de sistema de Termos de Uso e Compliance com controle obrigatório via middleware, armazenamento estruturado em HTML e envio automatizado ao cliente",
           "Construção de sistema avançado de notificações administrativas com segmentação por agências, recorrência e controle de obrigatoriedade",
-          "Refatoração de dashboard financeira com Highcharts e Redis, otimizando performance e permitindo filtros dinâmicos por período e unidade",
+          "Refatoração de dashboard financeira com Highcharts e Redis, otimizando performance e permitindo filtros dinâmicos por período e agências",
           "Processamento e tratamento de dados financeiros via importação e exportação de arquivos XLSX, além de manipulação e exibição de PDFs",
-          "Evolução contínua do sistema administrativo com criação de migrations, ajustes estruturais em banco de dados e manutenção de relacionamentos complexos entre múltiplas entidades",
+          "Ajustes estruturais em banco de dados através de migrations, evolução contínua do sistema administrativo e manutenção de relacionamentos complexos entre múltiplas entidades",
           "Implementação de regras de acesso e permissões distintas em ambientes com múltiplos perfis (administradores, operadores, contas e agências)"
         ],
         techStack: ["PHP", "Laravel", "Livewire", "Tailwind", "Tallstack", "Alpine", "Redis", "MySQL", "GitBucket"]

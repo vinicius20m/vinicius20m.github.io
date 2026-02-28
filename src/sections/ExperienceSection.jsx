@@ -1,11 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ExperienceCoursesSubSection from './ExperienceCoursesSubSection';
 import Pill from '../components/Pill';
+import Modal from '../components/Modal';
+import certificatesData from '../data/certificates';
 
 const ExperienceSection = () => {
   const { translations } = useLanguage();
   const experience = translations.experience;
+  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  const ceopagReferenceLetter = certificatesData.find(cert => cert.title === 'Ceopag Reference Letter');
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const openModalCertificate = () => {
+    setSelectedCertificate(ceopagReferenceLetter);
+    setIsModalOpen(true);
+  };
+
+  const closeModalCertificate = () => {
+    setIsModalOpen(false);
+    setSelectedCertificate(null);
+  };
 
   const getStartYear = (dateRange) => {
     const parts = dateRange.split(' - ')[0];
@@ -47,18 +77,38 @@ const ExperienceSection = () => {
                   <div className="p-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl">
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 hover:shadow-xl transition-shadow duration-300">
                       {/* Header */}
-                      <div className="mb-4 flex justify-between items-start">
-                        <div className="ml-4">
-                          <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                      <div className="mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-start">
+                        <div className="ml-4 flex-1 mb-3 sm:mb-0">
+                          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-1">
                             {item.jobTitle}
                           </h3>
                           <p className="text-blue-600 dark:text-blue-400 font-semibold mb-1">
                             {item.company}
                           </p>
                         </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          {item.dateRange}
-                        </p>
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-2 ml-4 sm:ml-0">
+                          {index === 0 && ceopagReferenceLetter && (
+                            <button
+                              onClick={openModalCertificate}
+                              className="border border-blue-900/90 md:mr-7 relative w-21 h-16 rounded-lg overflow-hidden transition-transform duration-200 hover:scale-108 hover:-translate-y-1 hover:cursor-pointer group"
+                              title="View Reference Letter"
+                            >
+                              <img 
+                                src={ceopagReferenceLetter.image} 
+                                alt="Reference Letter" 
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute top-4 right-1 bg-white/90 dark:bg-gray-800/90 rounded-full p-1 shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                </svg>
+                              </div>
+                            </button>
+                          )}
+                          <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {item.dateRange}
+                          </p>
+                        </div>
                       </div>
 
                       {/* Description */}
@@ -97,6 +147,30 @@ const ExperienceSection = () => {
 
         <ExperienceCoursesSubSection />
       </div>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModalCertificate}
+        title={selectedCertificate?.title || 'Reference Letter'}
+      >
+        {selectedCertificate && (
+          <div className="w-full h-full">
+            {!selectedCertificate.pdf || isMobile ? (
+              <img
+                src={selectedCertificate.image}
+                alt={selectedCertificate.title}
+                className="w-full h-auto max-h-[70vh] object-contain rounded"
+              />
+            ) : (
+              <iframe
+                src={selectedCertificate.pdf}
+                className="w-full h-[30rem] md:h-[30rem] border-0 rounded"
+                title={selectedCertificate.title}
+              />
+            )}
+          </div>
+        )}
+      </Modal>
     </section>
   );
 };
