@@ -244,7 +244,7 @@ export default function CertificatesCarousel({ certificates }) {
       >
         {selectedCertificate && (
           <div className="w-full h-full">
-            {isMobile ? (
+            {!selectedCertificate.pdf || isMobile ? (
               <img
                 src={selectedCertificate.image}
                 alt={selectedCertificate.title}

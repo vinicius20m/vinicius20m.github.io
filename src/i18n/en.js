@@ -99,6 +99,22 @@ const en = {
     description: "My professional journey and key achievements.",
     items: [
       {
+        jobTitle: "PHP Web Full-Stack Developer",
+        company: "CEOPAG INSTITUICAO DE PAGAMENTO S.A.",
+        dateRange: "Oct 2025 — Jan 2026",
+        description: "Web Developer at a company in the financial sector (sub-acquirer), working on the evolution of a robust, secure, responsive banking solution designed for high transactional volume.",
+        achievements: [
+          "Maintenance of critical application modules using Laravel, Livewire and Alpine, following a mobile-first approach",
+          "Complete implementation of Terms of Use and Compliance system with mandatory control via middleware, structured HTML storage and automated sending to the client",
+          "Construction of advanced administrative notification system with agency segmentation, recurrence and mandatory control",
+          "Refactoring of financial dashboard with Highcharts and Redis, optimizing performance and allowing dynamic filters by period and agencies",
+          "Processing and treatment of financial data via XLSX file import and export, in addition to PDF manipulation and display",
+          "Structural adjustments in the database through migrations, continuous evolution of the administrative system, and maintenance of complex relationships among multiple entities",
+          "Implementation of distinct access and permission rules in environments with multiple profiles (administrators, operators, accounts and agencies)"
+        ],
+        techStack: ["PHP", "Laravel", "Livewire", "Tailwind", "Tallstack", "Alpine", "Redis", "MySQL", "GitBucket"]
+      },
+      {
         jobTitle: "FullStack Web & Mobile Developer",
         company: "GIGATRON FRANCHISING LTDA",
         dateRange: "Jun 2024 — May 2025",
