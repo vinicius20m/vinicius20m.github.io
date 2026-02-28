@@ -36,6 +36,7 @@ import phpOoExceptionsIcon from '../assets/certificates/php oo exceptions and da
 import phpOoExceptionsPdf from '../assets/certificates/php oo exceptions and database.pdf';
 import preparaImage from '../assets/certificates/Certificado PREPARA.jpg';
 import preparaPdf from '../assets/certificates/Certificado PREPARA.pdf';
+import ceopagReferenceLetterImage from '../assets/certificates/CARTA DE REFERENCIA - CEOPAG.jpg';
 
 const certificatesData = [
   {
@@ -43,6 +44,22 @@ const certificatesData = [
     image: aplicandoDesignPatternsImage,
     icon: aplicandoDesignPatternsIcon,
     pdf: aplicandoDesignPatternsPdf,
+    issuer: "Unknown",
+    year: "2026"
+  },
+  {
+    title: "PREPARA Certificate",
+    image: preparaImage,
+    icon: null,
+    pdf: preparaPdf,
+    issuer: "Unknown",
+    year: "2026"
+  },
+  {
+    title: "Ceopag Reference Letter",
+    image: ceopagReferenceLetterImage,
+    icon: null,
+    pdf: null,
     issuer: "Unknown",
     year: "2026"
   },
@@ -123,14 +140,6 @@ const certificatesData = [
     image: microsservicosDotnetImage,
     icon: microsservicosDotnetIcon,
     pdf: microsservicosDotnetPdf,
-    issuer: "Unknown",
-    year: "2026"
-  },
-  {
-    title: "PREPARA Certificate",
-    image: preparaImage,
-    icon: null,
-    pdf: preparaPdf,
     issuer: "Unknown",
     year: "2026"
   },
