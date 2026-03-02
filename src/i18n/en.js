@@ -20,7 +20,7 @@ const en = {
     headline: "Building solutions with quality and performance",
     subtext: "Experience with React, PHP and modern architecture. Turning ideas into scalable and functional solutions.",
     techStack: ["PHP", "Laravel", "Livewire", "JavaScript", "React", "Tailwind"],
-    projectsButton: "View Projects",
+    mainButton: "View Experience",
     contactButton: "Contact",
     darkModeButton: "🌙",
     languageButton: "PT | EN"

@@ -20,7 +20,7 @@ const pt = {
     headline: "Criando soluções com qualidade e performance",
     subtext: "Experiência com React, PHP e arquitetura moderna. Transformo ideias em soluções escaláveis e funcionais.",
     techStack: ["PHP", "Laravel", "Livewire", "JavaScript", "React", "Tailwind"],
-    projectsButton: "Ver Projetos",
+    mainButton: "Ver Experiência",
     contactButton: "Contato",
     darkModeButton: "🌙",
     languageButton: "PT | EN"
@@ -117,7 +117,7 @@ const pt = {
       {
         jobTitle: "FullStack Web & Mobile Developer",
         company: "GIGATRON FRANCHISING LTDA",
-        dateRange: "Jun 2024 — May 2025",
+        dateRange: "Jun 2024 — Mai 2025",
         description: "Desenvolvimento e manutenção de sistemas ERP web e mobile, com foco em integrações, performance e estabilidade de aplicações em produção.",
         achievements: [
           "Integração de ERP com marketplaces como Shopee, Mercado Livre, Amazon, Magalu e NuvemShop",
@@ -131,7 +131,7 @@ const pt = {
       {
         jobTitle: "React Native Developer",
         company: "GIGATRON FRANCHISING LTDA",
-        dateRange: "Aug 2022 — May 2024",
+        dateRange: "Ago 2022 — Mai 2024",
         description: "Atuação no desenvolvimento de um aplicativo mobile PDV, com foco em performance, integração com hardware e experiência do usuário.",
         achievements: [
           "Desenvolvimento do zero de um aplicativo PDV usando React Native",
@@ -145,7 +145,7 @@ const pt = {
       {
         jobTitle: "PHP FullStack Junior Developer",
         company: "AUDITOR PÚBLICO ASSESSORIA E TECNOLOGIA LTDA",
-        dateRange: "Feb 2021 — Aug 2021",
+        dateRange: "Fev 2021 — Ago 2021",
         description: "Suporte e manutenção de sistemas web para gestão pública, atuando em módulos fiscais, de saúde e automação de processos administrativos.",
         achievements: [
           "Manutenção de sistemas públicos nas áreas de saúde e fiscal",

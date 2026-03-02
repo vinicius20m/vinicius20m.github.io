@@ -39,9 +39,9 @@ const SkillsSection = () => {
   const skills = translations.skills;
 
   return (
-    <section id="skills" className="min-h-screen py-20 md:px-5 bg-gray-100 dark:bg-gray-900">
+    <section id="skills" className="min-h-screen py-15 md:px-5 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-9">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {skills.title}
           </h2>
@@ -51,7 +51,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Languages */}
-        <div className="mb-12">
+        <div className="mb-7">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.languages}
           </h3>
@@ -65,7 +65,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Frameworks & Platforms */}
-        <div className="mb-12">
+        <div className="mb-7">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.frameworksPlatforms}
           </h3>
@@ -79,7 +79,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Libraries & UI */}
-        <div className="mb-12">
+        <div className="mb-7">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.librariesUI}
           </h3>
@@ -93,7 +93,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Databases */}
-        <div className="mb-12">
+        <div className="mb-7">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.databases}
           </h3>
@@ -107,7 +107,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Tools & Quality */}
-        <div className="mb-12">
+        <div className="mb-7">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.toolsQuality}
           </h3>
@@ -121,7 +121,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Engineering Practices */}
-        <div className="mb-12">
+        <div className="mb-7">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             {skills.categories.engineeringPractices}
           </h3>

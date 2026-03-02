@@ -32,10 +32,20 @@ export default function Header() {
     }
   };
 
+  const navItems = [
+    { key: 'hero', sectionId: null },
+    { key: 'experience', sectionId: 'experience' },
+    { key: 'certificates', sectionId: 'certificates' },
+    { key: 'skills', sectionId: 'skills' },
+    { key: 'projects', sectionId: 'projects' },
+    { key: 'about', sectionId: 'about' },
+    { key: 'contact', sectionId: 'contact' },
+  ];
+
   return (
     <>
-      <header className={`sticky top-0 w-full z-10 transition-all transition-colors duration-500 border-b border-gray-200 dark:border-gray-700 ${isCompact
-        ? 'bg-white/67 dark:bg-gray-900/65 backdrop-blur-sm shadow-lg py-1'
+      <header className={`sticky top-0 w-full z-50 transition-all transition-colors duration-500 border-b border-gray-200 dark:border-gray-700 ${isCompact
+        ? 'bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm shadow-lg py-1'
         : 'bg-gradient-to-b from-blue-700/20 to-gray-100 dark:from-sky-700/30 dark:to-sky-950/30 shadow-xl py-2 sm:py-4 border-gray-300 dark:border-slate-800/40'}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -55,62 +65,16 @@ export default function Header() {
             {/* Center zone: Navigation */}
             <nav className="hidden md:block md:px-2">
               <ul className="flex space-x-4">
-                <li>
-                  <button
-                    onClick={scrollToTop}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.hero}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('projects')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.projects}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('skills')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.skills}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('certificates')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.certificates}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('experience')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.experience}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('about')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.about}
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection('contact')}
-                    className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
-                  >
-                    {translations.header.nav.contact}
-                  </button>
-                </li>
+                {navItems.map((item) => (
+                  <li key={item.key}>
+                    <button
+                      onClick={item.sectionId ? () => scrollToSection(item.sectionId) : scrollToTop}
+                      className={`text-blue-950 dark:text-blue-100 hover:text-sky-700 font-bold hover:scale-105 hover:-translate-y-1 transition-all hover:cursor-pointer duration-150 ${isCompact ? 'text-sm' : 'text-lg'}`}
+                    >
+                      {translations.header.nav[item.key]}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </nav>
 

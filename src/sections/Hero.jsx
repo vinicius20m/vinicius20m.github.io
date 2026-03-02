@@ -18,8 +18,8 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="py-7 pb-20 bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-8xl mx-auto rounded-2xl shadow-2xl px-7 bg-teal-50/40 dark:bg-sky-950/30 py-5 border border-lg border-sky-800/30 transition-colors duration-400">
+    <section id="hero" className="pt-5 pb-18 bg-gray-100 dark:bg-gray-900">
+      <div className="max-w-8xl mx-auto rounded-2xl shadow-2xl px-7 bg-sky-50/40 dark:bg-sky-950/30 py-5 border border-lg border-sky-800/30 transition-colors duration-400">
         <div className="flex flex-col lg:flex-row items-center gap-7 lg:gap-10">
           {/* Text Block */}
           <div className="w-full lg:w-3/5 text-center lg:text-left">
@@ -51,10 +51,10 @@ const Hero = () => {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-start">
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
-                  onClick={() => scrollToSection('projects')}
+                  onClick={() => scrollToSection('experience')}
                   className="px-6 mx-5 md:px-12 py-3 border border-md border-blue-700 bg-blue-500 text-white rounded-2xl hover:-translate-y-2 hover:scale-110 transition-all duration-150 hover:cursor-pointer shadow-lg hover:shadow-xl text-xl font-bold text-center"
                 >
-                  {hero.projectsButton}
+                  {hero.mainButton}
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}

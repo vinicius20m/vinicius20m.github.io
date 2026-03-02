@@ -44,8 +44,8 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="min-h-screen py-20 bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-7xl md:mx-auto">
+    <section id="experience" className="min-h-screen py-5 bg-gray-100 dark:bg-gray-900">
+      <div className="max-w-7xl mt-10 md:mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {experience.title}
@@ -55,7 +55,7 @@ const ExperienceSection = () => {
           </p>
         </div>
 
-        <div className="relative md:ml-30 ">
+        <div className="relative md:ml-24">
           {/* Vertical line */}
           <div className="absolute md:left-8 w-0.5 bg-gray-300 dark:bg-gray-600 h-full"></div>
 
@@ -63,14 +63,14 @@ const ExperienceSection = () => {
             {experience.items.map((item, index) => (
               <div key={index} className="relative flex items-start">
                 {/* Start year on left side of dot */}
-                <div className="absolute left-0 top-6 transform -translate-x-full pr-4 hidden md:block">
-                  <span className="text-lg font-semibold text-blue-600 dark:text-blue-400">
+                <div className="absolute left-0 top-4 transform -translate-x-full pr-8 hidden md:block">
+                  <span className="text-2xl font-semibold text-blue-600 dark:text-blue-400">
                     {getStartYear(item.dateRange)}
                   </span>
                 </div>
 
                 {/* Timeline dot */}
-                <div className="absolute md:left-7 left-1.5 w-5 h-5 bg-blue-500 rounded-full border-5 border-gray-100 dark:border-gray-900 z-5"></div>
+                <div className="absolute md:left-[1.2rem] left-1.5 w-6 h-6 md:w-8 md:h-8 bg-blue-500 rounded-full border-7 md:border-9 border-gray-100 dark:border-gray-900 z-5"></div>
 
                 {/* Content card */}
                 <div className="md:ml-16 ml-2 flex-1 max-w-4xl">
