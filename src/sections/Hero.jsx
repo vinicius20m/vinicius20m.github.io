@@ -18,8 +18,8 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="py-7 pb-20 bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-8xl mx-auto rounded-2xl shadow-2xl px-7 bg-teal-50/40 dark:bg-sky-950/30 py-5 border border-lg border-sky-800/30 transition-colors duration-400">
+    <section id="hero" className="pt-5 pb-18 bg-gray-100 dark:bg-gray-900">
+      <div className="max-w-8xl mx-auto rounded-2xl shadow-2xl px-7 bg-sky-50/40 dark:bg-sky-950/30 py-5 border border-lg border-sky-800/30 transition-colors duration-400">
         <div className="flex flex-col lg:flex-row items-center gap-7 lg:gap-10">
           {/* Text Block */}
           <div className="w-full lg:w-3/5 text-center lg:text-left">

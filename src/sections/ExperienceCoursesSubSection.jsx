@@ -51,17 +51,17 @@ const ExperienceCoursesSubSection = () => {
   // };
 
   return (
-    <div id="courses" className="mt-20">
+    <div id="courses" className="mt-14">
       <div className="text-center mb-16">
         <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {courses.title}
         </h3>
-        <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+        {/* <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
           {courses.description}
-        </p>
+        </p> */}
       </div>
 
-      <div className="relative md:ml-30">
+      <div className="relative md:ml-24">
         <>
           {/* Vertical line */}
           <div className="absolute md:left-8 w-0.5 bg-gray-300 dark:bg-gray-600 h-full"></div>
