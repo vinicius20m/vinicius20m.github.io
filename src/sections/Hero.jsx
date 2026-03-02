@@ -51,10 +51,10 @@ const Hero = () => {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-start">
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
-                  onClick={() => scrollToSection('projects')}
+                  onClick={() => scrollToSection('experience')}
                   className="px-6 mx-5 md:px-12 py-3 border border-md border-blue-700 bg-blue-500 text-white rounded-2xl hover:-translate-y-2 hover:scale-110 transition-all duration-150 hover:cursor-pointer shadow-lg hover:shadow-xl text-xl font-bold text-center"
                 >
-                  {hero.projectsButton}
+                  {hero.mainButton}
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}

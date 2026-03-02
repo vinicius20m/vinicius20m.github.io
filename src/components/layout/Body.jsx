@@ -12,16 +12,10 @@ export default function Body() {
   return (
     <main className="flex-1 mx-auto lg:max-w-7xl max-w-full px-1.5 md:px-10 lg:px-24">
       <Hero />
-      <ProjectsSection />
-      <SkillsSection />
-      <CertificatesSection />
-      {/* <section id="test-carousel" className="min-h-screen flex items-center justify-center bg-gray-200 dark:bg-gray-800">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Test Carousel</h2>
-          <EmblaTestCarousel />
-        </div>
-      </section> */}
       <ExperienceSection />
+      <CertificatesSection />
+      <SkillsSection />
+      <ProjectsSection />
       <AboutSection />
       <ContactSection />
     </main>

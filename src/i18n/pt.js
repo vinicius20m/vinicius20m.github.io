@@ -20,7 +20,7 @@ const pt = {
     headline: "Criando soluções com qualidade e performance",
     subtext: "Experiência com React, PHP e arquitetura moderna. Transformo ideias em soluções escaláveis e funcionais.",
     techStack: ["PHP", "Laravel", "Livewire", "JavaScript", "React", "Tailwind"],
-    projectsButton: "Ver Projetos",
+    mainButton: "Ver Experiência",
     contactButton: "Contato",
     darkModeButton: "🌙",
     languageButton: "PT | EN"
